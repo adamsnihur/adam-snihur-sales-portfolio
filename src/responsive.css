@@ -1,0 +1,43 @@
+@media (max-width: 900px) {
+  :root { --container: min(100% - 2rem, 760px); }
+  .site-header { grid-template-columns: 1fr auto; }
+  .site-header nav { display: none; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-copy { padding-top: 2rem; }
+  .hero-proof { max-width: 520px; }
+  .portrait-wrap { margin-left: 0; }
+  .section-title { grid-template-columns: 1fr; }
+  .section-intro { grid-column: 1; margin-top: 0; }
+  .experience-row { grid-template-columns: .2fr .8fr 1.6fr; gap: 1.3rem; }
+  .method-grid { grid-template-columns: 1fr 1fr; }
+  .method-grid article:nth-child(2) { border-right: 0; }
+  .method-grid article:nth-child(-n+2) { border-bottom: 1px solid #414145; }
+  .supporting-list { grid-template-columns: 1fr; }
+  .supporting-list article:nth-child(odd) { border-right: 0; }
+  .supporting-list article:nth-child(even) { padding-left: 0; }
+  .skills-section, .contact { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 620px) {
+  .site-header { margin-top: .7rem; min-height: 58px; padding-left: 1rem; }
+  .site-header > .button { min-height: 40px; }
+  .hero { padding-top: 4rem; }
+  h1 { font-size: clamp(3.15rem, 15vw, 4.6rem); }
+  .hero-actions { align-items: flex-start; flex-direction: column; gap: .7rem; }
+  .hero-proof { padding-top: 1rem; }
+  .proof-list { width: 100%; }
+  .proof-list div { grid-template-columns: 1fr; gap: .25rem; }
+  .experience-row { grid-template-columns: 2.5rem 1fr; }
+  .experience-meta { grid-column: 2; }
+  .experience-body { grid-column: 2; }
+  .method-grid { grid-template-columns: 1fr; }
+  .method-grid article, .method-grid article + article { min-height: auto; padding: 1.5rem 0 2rem; border-right: 0; border-bottom: 1px solid #414145; }
+  .method-grid article:last-child { border-bottom: 0; }
+  .method-grid h3 { margin-top: 2.5rem; }
+  .supporting-list article { grid-template-columns: 1fr; gap: .6rem; }
+  .supporting-list p { grid-column: 1; margin-top: .2rem; }
+  .skills-section { gap: 2rem; padding-bottom: 6rem; }
+  .contact { width: calc(100% - 1rem); padding: 2.2rem 1.5rem; border-radius: 1.3rem; }
+  .contact h2 br { display: none; }
+  footer { flex-direction: column; gap: .4rem; }
+}
