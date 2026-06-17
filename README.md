@@ -4,6 +4,8 @@ Jednostronicowe portfolio rekrutacyjne pod role przedstawiciela handlowego, acco
 
 Audyt produkcyjny Lighthouse: **100 Performance / 100 Accessibility / 100 Best Practices / 100 SEO**.
 
+Strona: https://adamsnihur.github.io/adam-snihur-sales-portfolio/
+
 ## Uruchomienie lokalne
 
 ```bash

@@ -2,6 +2,8 @@
 
 ## Wynik
 
+- Publiczny URL: https://adamsnihur.github.io/adam-snihur-sales-portfolio/
+- GitHub Pages deployment: PASS
 - Build TypeScript/Vite: PASS
 - Test integralności artefaktów: PASS
 - Desktop 1440 px: PASS
