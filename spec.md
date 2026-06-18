@@ -10,7 +10,7 @@ Jednostronicowe portfolio sprzedażowe zawierające:
 
 1. Nawigację z CTA do CV.
 2. Hero z pozycjonowaniem i trzema dowodami dopasowania.
-3. Sekcję doświadczenia sprzedażowego: Orange, S’ouvre, e-commerce.
+3. Sekcję doświadczenia sprzedażowego: Solar Volt, Orange, S’ouvre, e-commerce.
 4. Sekcję sposobu pracy handlowej.
 5. Skrócone doświadczenie wspierające sprzedaż.
 6. Sekcję kompetencji i narzędzi.
@@ -52,7 +52,8 @@ interface SupportingExperience {
 ## Kryteria akceptacji
 
 - W pierwszym widoku widać rolę docelową oraz CTA do CV i kontaktu.
-- Orange, S’ouvre i e-commerce pojawiają się przed rolami techniczno-operacyjnymi.
+- Solar Volt, Orange, S’ouvre i e-commerce pojawiają się przed rolami techniczno-operacyjnymi.
+- Przy Solar Volt widnieją daty 03.2020–07.2021 oraz informacja, że rola była realizowana równolegle z pracą w Orange Polska.
 - Wszystkie twierdzenia dają się potwierdzić w CV.
 - Linki e-mail, LinkedIn i PDF działają.
 - Strona działa przy szerokości 320–1440 px bez poziomego przewijania.

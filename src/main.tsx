@@ -20,6 +20,17 @@ type SupportingExperience = {
 
 const salesExperience: SalesExperience[] = [
   {
+    company: "Solar Volt",
+    role: "Przedstawiciel handlowy ds. OZE",
+    period: "03.2020–07.2021",
+    summary: "Bezpośrednia sprzedaż rozwiązań OZE prowadzona równolegle z pracą w Orange Polska.",
+    evidence: [
+      "Prowadzenie popołudniowych spotkań z klientami zainteresowanymi fotowoltaiką, umawianych przez call center.",
+      "Badanie potrzeb i prezentowanie dopasowanej oferty podczas bezpośrednich wizyt u klientów.",
+      "Odpowiadanie na pytania i zastrzeżenia oraz prowadzenie procesu w kierunku finalizacji umowy.",
+    ],
+  },
+  {
     company: "Orange Polska",
     role: "Account Manager",
     period: "03.2019–06.2021",
@@ -163,10 +174,11 @@ function App() {
 
           <aside className="hero-proof" aria-label="Najważniejsze doświadczenia" data-reveal>
             <div className="portrait-wrap">
-              <img src="./adam-snihur.jpg" alt="Portret Adama Śnihura" width="696" height="696" />
+              <img src="./adam-snihur-sales-friendly-v2.png" alt="Przyjazny portret Adama Śnihura" width="1537" height="1023" />
               <span className="portrait-label">Poznań / Polska</span>
             </div>
             <div className="proof-list">
+              <div><strong>Solar Volt</strong><span>spotkania handlowe i sprzedaż OZE</span></div>
               <div><strong>Orange Polska</strong><span>sprzedaż i rozwój klientów B2B</span></div>
               <div><strong>S’ouvre</strong><span>sprzedaż bezpośrednia i zespół</span></div>
               <div><strong>E-commerce</strong><span>oferta, dostawcy i rentowność</span></div>
@@ -175,7 +187,7 @@ function App() {
         </section>
 
         <section className="sales" id="doswiadczenie">
-          <SectionTitle label="01 / Doświadczenie" title="Sprzedaż w praktyce" intro="Trzy środowiska, jeden wspólny mianownik: zdobyć zaufanie, zrozumieć potrzebę i dowieźć wartość." />
+          <SectionTitle label="01 / Doświadczenie" title="Sprzedaż w praktyce" intro="Cztery środowiska, jeden wspólny mianownik: zdobyć zaufanie, zrozumieć potrzebę i dowieźć wartość." />
           <div className="experience-list">
             {salesExperience.map((item, index) => (
               <article className="experience-row" key={item.company} data-reveal>
