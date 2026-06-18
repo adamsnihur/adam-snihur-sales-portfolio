@@ -34,14 +34,13 @@ export function SectionTitle({ label, title, intro }: Readonly<SectionTitleProps
   );
 }
 
-export function SiteHeader({ knowledgeView }: Readonly<SiteHeaderProps>) {
+export function SiteHeader(_props: Readonly<SiteHeaderProps>) {
   return (
     <header className="site-header">
       <a className="wordmark" href="#top" aria-label="Adam Śnihur — początek strony">Adam Śnihur</a>
       <nav aria-label="Główna nawigacja">
         <a href="#doswiadczenie">Doświadczenie</a>
         <a href="#podejscie">Podejście</a>
-        <a href={knowledgeView ? "./#wiedza" : "#wiedza"}>Wiedza</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
       <a className="button button-small button-dark" href="./CV_Adam_Snihur_Przedstawiciel_Handlowy.pdf" download>

@@ -241,11 +241,7 @@ Export `salesExperience`, `supportingExperience`, and `methods` using the types 
 
 - [ ] **Step 3: Move reusable presentation helpers to `src/components/shared.tsx`**
 
-Export `ArrowIcon`, `DownloadIcon`, `SectionTitle`, `SiteHeader`, `ContactSection`, and `SiteFooter`. `SiteHeader` accepts `knowledgeView: boolean` and uses:
-
-```tsx
-<a href={knowledgeView ? "./#wiedza" : "#wiedza"}>Wiedza</a>
-```
+Export `ArrowIcon`, `DownloadIcon`, `SectionTitle`, `SiteHeader`, `ContactSection`, and `SiteFooter`. `SiteHeader` may retain the `knowledgeView: boolean` prop for the later routing work, but Task 3 must preserve the current rendered navigation and must not render a `Wiedza` link before its target exists. Defer the link until Task 6, which adds the knowledge section and the correct home/knowledge navigation behavior.
 
 - [ ] **Step 4: Rebuild the existing home composition in `src/components/HomePage.tsx`**
 
