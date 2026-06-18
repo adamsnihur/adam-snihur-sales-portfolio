@@ -1,0 +1,26 @@
+export type SalesExperience = {
+  company: string;
+  role: string;
+  period: string;
+  summary: string;
+  evidence: string[];
+};
+
+export type SupportingExperience = {
+  company: string;
+  role: string;
+  period: string;
+  contribution: string;
+};
+
+export type SalesProject = {
+  company: string;
+  role: string;
+  period: string;
+  summary: string;
+  challenge: string;
+  scope: string;
+  deliverables: string;
+};
+
+export type MethodStep = readonly [number: string, title: string, copy: string];
