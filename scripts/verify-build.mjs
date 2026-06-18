@@ -28,6 +28,8 @@ const sourceFiles = [
   "src/data/capabilities.ts",
   "src/data/articles.ts",
   "src/components/HomePage.tsx",
+  "src/components/ProjectCaseStudy.tsx",
+  "src/components/CapabilityGroups.tsx",
   "src/components/KnowledgeSection.tsx",
   "src/components/KnowledgeIndex.tsx",
   "src/components/ArticlePage.tsx",
@@ -43,6 +45,19 @@ const sourceByFile = new Map(
 );
 const assertionsByFile = new Map([
   ["src/components/HomePage.tsx", ["Relacja otwiera drzwi"]],
+  [
+    "src/components/ProjectCaseStudy.tsx",
+    ["Wyzwanie", "Zakres", "Rezultat pracy"],
+  ],
+  [
+    "src/data/capabilities.ts",
+    [
+      "Prospecting i discovery",
+      "Negocjacje i finalizacja",
+      "Rozwój klienta",
+      "Sprzedaż analityczna i operacyjna",
+    ],
+  ],
   [
     "src/data/experience.ts",
     [

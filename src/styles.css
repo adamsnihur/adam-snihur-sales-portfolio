@@ -68,7 +68,7 @@ svg { width: 1.05em; fill: none; stroke: currentColor; stroke-width: 1.8; stroke
 .button-light { background: var(--paper); color: var(--ink); }
 
 main { overflow: clip; }
-.hero, .sales, .method, .supporting, .skills-section, .contact, footer { width: var(--container); margin-inline: auto; }
+.hero, .sales, .method, .project-section, .supporting, .capabilities-section, .contact, footer { width: var(--container); margin-inline: auto; }
 .hero {
   min-height: calc(100dvh - 80px);
   display: grid;
@@ -97,10 +97,10 @@ h1 em { color: var(--accent); font-style: normal; }
 .proof-list strong { font-family: "Outfit", sans-serif; }
 .proof-list span { color: var(--muted); font-size: .9rem; }
 
-.sales, .method, .supporting { padding: clamp(6rem, 11vw, 10rem) 0; }
+.sales, .method, .project-section, .supporting { padding: clamp(6rem, 11vw, 10rem) 0; }
 .section-title { display: grid; grid-template-columns: .7fr 1.5fr; gap: 2rem; align-items: start; margin-bottom: clamp(3.5rem, 7vw, 6rem); }
 .eyebrow { margin: .55rem 0 0; color: var(--accent); font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
-.section-title h2, .skills-section h2 { font-size: clamp(2.7rem, 5vw, 4.7rem); line-height: .98; letter-spacing: -.05em; }
+.section-title h2 { font-size: clamp(2.7rem, 5vw, 4.7rem); line-height: .98; letter-spacing: -.05em; }
 .section-intro { grid-column: 2; max-width: 670px; margin: -1rem 0 0; color: var(--muted); font-size: 1.13rem; line-height: 1.55; }
 
 .experience-list { border-top: 1px solid var(--ink); }
@@ -126,6 +126,17 @@ h1 em { color: var(--accent); font-style: normal; }
 .method-grid h3 { margin-top: 5rem; font-size: 1.35rem; }
 .method-grid p { color: #b8b6b0; line-height: 1.55; }
 
+.project-case-study { padding: clamp(2rem, 5vw, 4rem); border: 1px solid var(--line); border-radius: 2rem; background: var(--surface); }
+.project-header { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2rem; align-items: start; }
+.project-header h2, .capabilities-section h2 { font-size: clamp(2.5rem, 5vw, 4.4rem); line-height: .98; letter-spacing: -.05em; }
+.project-header time { color: var(--muted); font-weight: 600; white-space: nowrap; }
+.project-summary { max-width: 780px; margin: 2rem 0 3rem; color: var(--muted); font-size: 1.13rem; line-height: 1.6; }
+.project-fields { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; border-top: 1px solid var(--line); }
+.project-fields > div { min-width: 0; padding: 1.7rem 1.7rem 0 0; }
+.project-fields > div + div { padding-left: 1.7rem; border-left: 1px solid var(--line); }
+.project-fields dt, .capability-evidence-label { color: var(--accent); font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.project-fields dd { margin: .8rem 0 0; line-height: 1.55; overflow-wrap: anywhere; }
+
 .supporting-list { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--ink); }
 .supporting-list article { display: grid; grid-template-columns: .8fr 1.3fr; gap: 1.5rem; padding: 2.2rem 2.2rem 2.2rem 0; border-bottom: 1px solid var(--line); }
 .supporting-list article:nth-child(odd) { border-right: 1px solid var(--line); }
@@ -135,9 +146,16 @@ h1 em { color: var(--accent); font-style: normal; }
 .supporting-list h3 { font-size: 1.25rem; }
 .supporting-list p { grid-column: 2; margin: -.5rem 0 0; line-height: 1.5; }
 
-.skills-section { display: grid; grid-template-columns: .85fr 1.7fr; gap: 4rem; padding: 3rem 0 9rem; }
-.skill-cloud { display: flex; flex-wrap: wrap; align-content: flex-start; gap: .7rem; }
-.skill-cloud span { padding: .72rem 1rem; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+.capabilities-section { display: grid; grid-template-columns: .85fr 1.7fr; gap: 4rem; padding: 3rem 0 9rem; }
+.capability-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--ink); }
+.capability-group { min-width: 0; padding: 2rem 2rem 2rem 0; border-bottom: 1px solid var(--line); }
+.capability-group:nth-child(odd) { border-right: 1px solid var(--line); }
+.capability-group:nth-child(even) { padding-left: 2rem; }
+.capability-group h3 { font-size: 1.4rem; }
+.capability-group > p:not(.capability-evidence-label) { color: var(--muted); line-height: 1.55; }
+.capability-evidence-label { margin: 1.5rem 0 .7rem; }
+.capability-group ul { display: flex; flex-wrap: wrap; gap: .45rem 1.25rem; margin: 0; padding-left: 1.1rem; }
+.capability-group li { overflow-wrap: anywhere; }
 
 .contact { display: grid; grid-template-columns: 1.5fr .7fr; gap: 3rem; align-items: end; padding: clamp(3rem, 7vw, 6rem); border-radius: 2rem; background: var(--ink); color: var(--paper); }
 .contact h2 { font-size: clamp(2.7rem, 5vw, 5rem); line-height: .98; letter-spacing: -.055em; }

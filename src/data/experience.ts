@@ -1,4 +1,9 @@
-import type { MethodStep, SalesExperience, SupportingExperience } from "../types";
+import type {
+  MethodStep,
+  SalesExperience,
+  SalesProject,
+  SupportingExperience,
+} from "../types";
 
 export const salesExperience: SalesExperience[] = [
   {
@@ -80,3 +85,17 @@ export const methods: MethodStep[] = [
   ["03", "Dopasowuję rozwiązanie", "Przekładam potrzeby na konkretną propozycję i jasno komunikuję wartość."],
   ["04", "Rozwijam relację", "Dbam o wdrożenie, rozwiązuję problemy i szukam kolejnych obszarów współpracy."],
 ];
+
+export const salesProject: SalesProject = {
+  company: "AdVibes",
+  role: "Konsultant procesu sprzedaży (freelance)",
+  period: "03.2026–05.2026",
+  summary:
+    "Krótkoterminowy projekt dla agencji performance marketingowej: opracowanie procesu sprzedaży B2B, segmentacji klientów, prospectingu, pipeline’u i sekwencji kontaktu.",
+  challenge:
+    "Uporządkowanie sposobu pozyskiwania i prowadzenia potencjalnych klientów B2B.",
+  scope:
+    "Segmentacja, prospecting, etapy pipeline’u, sekwencje kontaktu i materiały wspierające rozpoczęcie sprzedaży.",
+  deliverables:
+    "Przygotowany model procesu, roadmapa działań i zestaw materiałów operacyjnych do wykorzystania przez agencję.",
+};

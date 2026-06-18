@@ -23,4 +23,10 @@ export type SalesProject = {
   deliverables: string;
 };
 
+export type Capability = {
+  title: string;
+  description: string;
+  evidence: string[];
+};
+
 export type MethodStep = readonly [number: string, title: string, copy: string];

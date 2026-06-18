@@ -1,4 +1,6 @@
-import { methods, salesExperience, supportingExperience } from "../data/experience";
+import { methods, salesExperience, salesProject, supportingExperience } from "../data/experience";
+import { CapabilityGroups } from "./CapabilityGroups";
+import { ProjectCaseStudy } from "./ProjectCaseStudy";
 import {
   ArrowIcon,
   ContactSection,
@@ -7,19 +9,6 @@ import {
   SiteFooter,
   SiteHeader,
 } from "./shared";
-
-const skills = [
-  "Sprzedaż B2B",
-  "Aktywne pozyskiwanie klientów",
-  "Badanie potrzeb",
-  "Negocjacje",
-  "Finalizacja sprzedaży",
-  "Rozwój portfela",
-  "Upselling i cross-selling",
-  "E-commerce",
-  "Analiza rynku",
-  "Prezentowanie rekomendacji",
-];
 
 export function HomePage() {
   return (
@@ -85,8 +74,10 @@ export function HomePage() {
           </div>
         </section>
 
+        <ProjectCaseStudy project={salesProject} />
+
         <section className="supporting">
-          <SectionTitle label="03 / Szersza perspektywa" title="Doświadczenie, które wzmacnia sprzedaż" intro="Analityka, marketing i koordynacja projektów pomagają mi lepiej rozumieć organizację klienta — nie odciągają mnie od celu handlowego." />
+          <SectionTitle label="04 / Szersza perspektywa" title="Doświadczenie, które wzmacnia sprzedaż" intro="Analityka, marketing i koordynacja projektów pomagają mi lepiej rozumieć organizację klienta — nie odciągają mnie od celu handlowego." />
           <div className="supporting-list">
             {supportingExperience.map((item) => (
               <article key={`${item.company}-${item.role}`} data-reveal>
@@ -98,10 +89,7 @@ export function HomePage() {
           </div>
         </section>
 
-        <section className="skills-section">
-          <div data-reveal><p className="eyebrow">04 / Kompetencje</p><h2>Co wnoszę do zespołu</h2></div>
-          <div className="skill-cloud" data-reveal>{skills.map((skill) => <span key={skill}>{skill}</span>)}</div>
-        </section>
+        <CapabilityGroups />
 
         <ContactSection />
       </main>

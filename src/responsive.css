@@ -15,7 +15,7 @@
   .supporting-list { grid-template-columns: 1fr; }
   .supporting-list article:nth-child(odd) { border-right: 0; }
   .supporting-list article:nth-child(even) { padding-left: 0; }
-  .skills-section, .contact { grid-template-columns: 1fr; }
+  .capabilities-section, .contact { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 620px) {
@@ -34,9 +34,18 @@
   .method-grid article, .method-grid article + article { min-height: auto; padding: 1.5rem 0 2rem; border-right: 0; border-bottom: 1px solid #414145; }
   .method-grid article:last-child { border-bottom: 0; }
   .method-grid h3 { margin-top: 2.5rem; }
+  .project-case-study { padding: 1.5rem; border-radius: 1.3rem; }
+  .project-header { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .project-header time { white-space: normal; }
+  .project-fields { grid-template-columns: minmax(0, 1fr); }
+  .project-fields > div, .project-fields > div + div { padding: 1.5rem 0; border-left: 0; border-bottom: 1px solid var(--line); }
+  .project-fields > div:last-child { border-bottom: 0; padding-bottom: 0; }
   .supporting-list article { grid-template-columns: 1fr; gap: .6rem; }
   .supporting-list p { grid-column: 1; margin-top: .2rem; }
-  .skills-section { gap: 2rem; padding-bottom: 6rem; }
+  .capabilities-section { gap: 2rem; padding-bottom: 6rem; }
+  .capability-grid { grid-template-columns: minmax(0, 1fr); }
+  .capability-group, .capability-group:nth-child(even) { padding: 1.7rem 0; }
+  .capability-group:nth-child(odd) { border-right: 0; }
   .contact { width: calc(100% - 1rem); padding: 2.2rem 1.5rem; border-radius: 1.3rem; }
   .contact h2 br { display: none; }
   footer { flex-direction: column; gap: .4rem; }
