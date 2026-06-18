@@ -174,7 +174,7 @@ function App() {
 
           <aside className="hero-proof" aria-label="Najważniejsze doświadczenia" data-reveal>
             <div className="portrait-wrap">
-              <img src="./adam-snihur-sales-friendly-v2.png" alt="Przyjazny portret Adama Śnihura" width="1537" height="1023" />
+              <img src="./adam-snihur-main-portfolio.jpg" alt="Portret Adama Śnihura" width="900" height="900" />
               <span className="portrait-label">Poznań / Polska</span>
             </div>
             <div className="proof-list">
