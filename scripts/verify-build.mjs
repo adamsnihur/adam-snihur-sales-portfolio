@@ -88,13 +88,17 @@ function extractExportedObject(source, exportName, file) {
   let escaped = false;
   let lineComment = false;
   let blockComment = false;
+  let objectSource = "";
 
   for (let index = start; index < source.length; index += 1) {
     const character = source[index];
     const nextCharacter = source[index + 1];
 
     if (lineComment) {
-      if (character === "\n") lineComment = false;
+      if (character === "\n") {
+        lineComment = false;
+        objectSource += character;
+      }
       continue;
     }
     if (blockComment) {
@@ -105,6 +109,7 @@ function extractExportedObject(source, exportName, file) {
       continue;
     }
     if (quote) {
+      objectSource += character;
       if (escaped) {
         escaped = false;
       } else if (character === "\\") {
@@ -116,20 +121,27 @@ function extractExportedObject(source, exportName, file) {
     }
     if (character === "/" && nextCharacter === "/") {
       lineComment = true;
+      objectSource += " ";
       index += 1;
       continue;
     }
     if (character === "/" && nextCharacter === "*") {
       blockComment = true;
+      objectSource += " ";
       index += 1;
       continue;
     }
     if (character === '"' || character === "'" || character === "`") {
       quote = character;
+      objectSource += character;
       continue;
     }
+    objectSource += character;
     if (character === "{") depth += 1;
-    if (character === "}" && --depth === 0) return source.slice(start, index + 1);
+    if (character === "}") {
+      depth -= 1;
+      if (depth === 0) return objectSource;
+    }
   }
 
   throw new Error(`Nie można wyodrębnić obiektu ${exportName} w ${file}`);
@@ -142,7 +154,7 @@ const salesProjectSource = extractExportedObject(
   experienceFile,
 );
 const forbiddenSalesProjectClaim =
-  /(zwiększyłem|wzrost przychodu|ROAS|konwersj[aę]|wdrożon[yo])/i;
+  /(zwiększyłem|wzrost przychodu|ROAS|konwersj[aię]|wdrożon[yo])/i;
 
 if (forbiddenSalesProjectClaim.test(salesProjectSource)) {
   throw new Error(
