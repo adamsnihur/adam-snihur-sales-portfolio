@@ -59,7 +59,7 @@ for (const assertion of assertions) {
 }
 
 const forbiddenAdVibesClaims = [
-  /AdVibes[^.]{0,160}(zwiększyłem|wzrost przychodu|ROAS|konwersj[aię]|wdrożon[oy])/i,
+  /AdVibes[\s\S]{0,160}(zwiększyłem|wzrost przychodu|ROAS|konwersj[aię]|wdrożon[oy])/i,
 ];
 
 for (const claim of forbiddenAdVibesClaims) {
