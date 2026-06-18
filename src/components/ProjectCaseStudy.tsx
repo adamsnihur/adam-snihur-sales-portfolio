@@ -19,7 +19,7 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
             <p className="eyebrow">03 / Projekt freelance</p>
             <h2 id="project-title">{project.role} — {project.company}</h2>
           </div>
-          <time dateTime="2026-03/2026-05">{project.period}</time>
+          <time dateTime={project.machinePeriod}>{project.period}</time>
         </header>
         <p className="project-summary">{project.summary}</p>
         <dl className="project-fields">

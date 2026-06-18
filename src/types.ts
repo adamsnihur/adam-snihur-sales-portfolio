@@ -17,6 +17,7 @@ export type SalesProject = {
   company: string;
   role: string;
   period: string;
+  machinePeriod: string;
   summary: string;
   challenge: string;
   scope: string;

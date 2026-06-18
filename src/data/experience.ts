@@ -90,6 +90,7 @@ export const salesProject: SalesProject = {
   company: "AdVibes",
   role: "Konsultant procesu sprzedaży (freelance)",
   period: "03.2026–05.2026",
+  machinePeriod: "2026-03/2026-05",
   summary:
     "Krótkoterminowy projekt dla agencji performance marketingowej: opracowanie procesu sprzedaży B2B, segmentacji klientów, prospectingu, pipeline’u i sekwencji kontaktu.",
   challenge:

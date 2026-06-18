@@ -35,19 +35,33 @@ const sourceFiles = [
   "src/components/ArticlePage.tsx",
 ];
 
-for (const file of sourceFiles) {
-  const path = join(root, file);
-  if (!existsSync(path)) throw new Error(`Brak modułu źródłowego: ${file}`);
-}
-
+const missingSourceFiles = sourceFiles.filter(
+  (file) => !existsSync(join(root, file)),
+);
 const sourceByFile = new Map(
-  sourceFiles.map((file) => [file, readFileSync(join(root, file), "utf8")]),
+  sourceFiles
+    .filter((file) => !missingSourceFiles.includes(file))
+    .map((file) => [file, readFileSync(join(root, file), "utf8")]),
 );
 const assertionsByFile = new Map([
-  ["src/components/HomePage.tsx", ["Relacja otwiera drzwi"]],
+  [
+    "src/components/HomePage.tsx",
+    [
+      "Relacja otwiera drzwi",
+      'import { ProjectCaseStudy } from "./ProjectCaseStudy"',
+      '<ProjectCaseStudy project={salesProject} />',
+      'import { CapabilityGroups } from "./CapabilityGroups"',
+      '<CapabilityGroups />',
+    ],
+  ],
   [
     "src/components/ProjectCaseStudy.tsx",
-    ["Wyzwanie", "Zakres", "Rezultat pracy"],
+    [
+      "Wyzwanie",
+      "Zakres",
+      "Rezultat pracy",
+      "dateTime={project.machinePeriod}",
+    ],
   ],
   [
     "src/data/capabilities.ts",
@@ -65,6 +79,7 @@ const assertionsByFile = new Map([
       "03.2020–07.2021",
       "Konsultant procesu sprzedaży (freelance)",
       "03.2026–05.2026",
+      'machinePeriod: "2026-03/2026-05"',
     ],
   ],
   ["src/components/KnowledgeSection.tsx", ["Wiedza sprzedażowa"]],
@@ -82,6 +97,7 @@ const assertionsByFile = new Map([
 
 for (const [file, assertions] of assertionsByFile) {
   const source = sourceByFile.get(file);
+  if (!source) continue;
   for (const assertion of assertions) {
     if (!source.includes(assertion)) {
       throw new Error(`Brak treści krytycznej w ${file}: ${assertion}`);
@@ -163,24 +179,34 @@ function extractExportedObject(source, exportName, file) {
 }
 
 const experienceFile = "src/data/experience.ts";
-const salesProjectSource = extractExportedObject(
-  sourceByFile.get(experienceFile),
-  "salesProject",
-  experienceFile,
-);
 const forbiddenSalesProjectClaim =
   /(zwiększyłem|wzrost przychodu|ROAS|konwersj[aię]|wdrożon[yo])/i;
+const experienceSource = sourceByFile.get(experienceFile);
 
-if (forbiddenSalesProjectClaim.test(salesProjectSource)) {
-  throw new Error(
-    `Nieweryfikowalne twierdzenie AdVibes: ${forbiddenSalesProjectClaim}`,
+if (experienceSource) {
+  const salesProjectSource = extractExportedObject(
+    experienceSource,
+    "salesProject",
+    experienceFile,
   );
+
+  if (forbiddenSalesProjectClaim.test(salesProjectSource)) {
+    throw new Error(
+      `Nieweryfikowalne twierdzenie AdVibes: ${forbiddenSalesProjectClaim}`,
+    );
+  }
 }
 
 for (const [file, source] of sourceByFile) {
   if (/lorem ipsum|todo|placeholder/i.test(source)) {
     throw new Error(`W kodzie pozostała treść tymczasowa: ${file}`);
   }
+}
+
+if (missingSourceFiles.length > 0) {
+  throw new Error(
+    `Brak zaplanowanych modułów źródłowych: ${missingSourceFiles.join(", ")}`,
+  );
 }
 
 console.log("Build verification: PASS");
