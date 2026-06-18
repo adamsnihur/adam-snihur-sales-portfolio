@@ -28,6 +28,7 @@ const sourceFiles = [
   "src/data/capabilities.ts",
   "src/data/articles.ts",
   "src/components/HomePage.tsx",
+  "src/components/KnowledgeSection.tsx",
   "src/components/KnowledgeIndex.tsx",
   "src/components/ArticlePage.tsx",
 ];
@@ -37,37 +38,122 @@ for (const file of sourceFiles) {
   if (!existsSync(path)) throw new Error(`Brak modułu źródłowego: ${file}`);
 }
 
-const source = sourceFiles
-  .map((file) => readFileSync(join(root, file), "utf8"))
-  .join("\n");
-const assertions = [
-  "Relacja otwiera drzwi",
-  "Solar Volt",
-  "03.2020–07.2021",
-  "Konsultant procesu sprzedaży (freelance)",
-  "03.2026–05.2026",
-  "Wiedza sprzedażowa",
-  "Sprzedaż B2B zaczyna się przed ofertą",
-  "BATNA, ZOPA i ustępstwa",
-  "Proces sprzedaży B2B: od leada do konsekwentnego follow-upu",
-  "Handlowiec jako łącznik między klientem a operacjami firmy",
-  "#/wiedza",
-];
+const sourceByFile = new Map(
+  sourceFiles.map((file) => [file, readFileSync(join(root, file), "utf8")]),
+);
+const assertionsByFile = new Map([
+  ["src/components/HomePage.tsx", ["Relacja otwiera drzwi"]],
+  [
+    "src/data/experience.ts",
+    [
+      "Solar Volt",
+      "03.2020–07.2021",
+      "Konsultant procesu sprzedaży (freelance)",
+      "03.2026–05.2026",
+    ],
+  ],
+  ["src/components/KnowledgeSection.tsx", ["Wiedza sprzedażowa"]],
+  [
+    "src/data/articles.ts",
+    [
+      "Sprzedaż B2B zaczyna się przed ofertą",
+      "BATNA, ZOPA i ustępstwa",
+      "Proces sprzedaży B2B: od leada do konsekwentnego follow-upu",
+      "Handlowiec jako łącznik między klientem a operacjami firmy",
+    ],
+  ],
+  ["src/routing.ts", ["#/wiedza"]],
+]);
 
-for (const assertion of assertions) {
-  if (!source.includes(assertion)) throw new Error(`Brak treści krytycznej: ${assertion}`);
+for (const [file, assertions] of assertionsByFile) {
+  const source = sourceByFile.get(file);
+  for (const assertion of assertions) {
+    if (!source.includes(assertion)) {
+      throw new Error(`Brak treści krytycznej w ${file}: ${assertion}`);
+    }
+  }
 }
 
-const forbiddenAdVibesClaims = [
-  /AdVibes[\s\S]{0,160}(zwiększyłem|wzrost przychodu|ROAS|konwersj[aię]|wdrożon[oy])/i,
-];
+function extractExportedObject(source, exportName, file) {
+  const declaration = new RegExp(
+    `export\\s+const\\s+${exportName}\\b[^=]*=\\s*{`,
+  ).exec(source);
+  if (!declaration) {
+    throw new Error(`Nie znaleziono eksportu obiektu ${exportName} w ${file}`);
+  }
 
-for (const claim of forbiddenAdVibesClaims) {
-  if (claim.test(source)) throw new Error(`Nieweryfikowalne twierdzenie AdVibes: ${claim}`);
+  const start = declaration.index + declaration[0].lastIndexOf("{");
+  let depth = 0;
+  let quote = null;
+  let escaped = false;
+  let lineComment = false;
+  let blockComment = false;
+
+  for (let index = start; index < source.length; index += 1) {
+    const character = source[index];
+    const nextCharacter = source[index + 1];
+
+    if (lineComment) {
+      if (character === "\n") lineComment = false;
+      continue;
+    }
+    if (blockComment) {
+      if (character === "*" && nextCharacter === "/") {
+        blockComment = false;
+        index += 1;
+      }
+      continue;
+    }
+    if (quote) {
+      if (escaped) {
+        escaped = false;
+      } else if (character === "\\") {
+        escaped = true;
+      } else if (character === quote) {
+        quote = null;
+      }
+      continue;
+    }
+    if (character === "/" && nextCharacter === "/") {
+      lineComment = true;
+      index += 1;
+      continue;
+    }
+    if (character === "/" && nextCharacter === "*") {
+      blockComment = true;
+      index += 1;
+      continue;
+    }
+    if (character === '"' || character === "'" || character === "`") {
+      quote = character;
+      continue;
+    }
+    if (character === "{") depth += 1;
+    if (character === "}" && --depth === 0) return source.slice(start, index + 1);
+  }
+
+  throw new Error(`Nie można wyodrębnić obiektu ${exportName} w ${file}`);
 }
 
-if (/lorem ipsum|todo|placeholder/i.test(source)) {
-  throw new Error("W kodzie pozostała treść tymczasowa");
+const experienceFile = "src/data/experience.ts";
+const salesProjectSource = extractExportedObject(
+  sourceByFile.get(experienceFile),
+  "salesProject",
+  experienceFile,
+);
+const forbiddenSalesProjectClaim =
+  /(zwiększyłem|wzrost przychodu|ROAS|konwersj[aę]|wdrożon[yo])/i;
+
+if (forbiddenSalesProjectClaim.test(salesProjectSource)) {
+  throw new Error(
+    `Nieweryfikowalne twierdzenie AdVibes: ${forbiddenSalesProjectClaim}`,
+  );
+}
+
+for (const [file, source] of sourceByFile) {
+  if (/lorem ipsum|todo|placeholder/i.test(source)) {
+    throw new Error(`W kodzie pozostała treść tymczasowa: ${file}`);
+  }
 }
 
 console.log("Build verification: PASS");

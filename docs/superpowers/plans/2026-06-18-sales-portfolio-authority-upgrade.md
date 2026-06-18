@@ -72,6 +72,7 @@ const sourceFiles = [
   "src/data/capabilities.ts",
   "src/data/articles.ts",
   "src/components/HomePage.tsx",
+  "src/components/KnowledgeSection.tsx",
   "src/components/KnowledgeIndex.tsx",
   "src/components/ArticlePage.tsx",
 ];
@@ -82,33 +83,53 @@ for (const file of sourceFiles) {
 }
 ```
 
-Read all listed source files into one `source` string and assert the exact critical content:
+Read the listed source files into a `sourceByFile` map and assert each exact critical string only in its owning module:
 
 ```js
-const assertions = [
-  "Relacja otwiera drzwi",
-  "Solar Volt",
-  "03.2020–07.2021",
-  "Konsultant procesu sprzedaży (freelance)",
-  "03.2026–05.2026",
-  "Wiedza sprzedażowa",
-  "Sprzedaż B2B zaczyna się przed ofertą",
-  "BATNA, ZOPA i ustępstwa",
-  "Proces sprzedaży B2B: od leada do konsekwentnego follow-upu",
-  "Handlowiec jako łącznik między klientem a operacjami firmy",
-  "#/wiedza",
-];
+const sourceByFile = new Map(
+  sourceFiles.map((file) => [file, readFileSync(join(root, file), "utf8")]),
+);
+const assertionsByFile = new Map([
+  ["src/components/HomePage.tsx", ["Relacja otwiera drzwi"]],
+  [
+    "src/data/experience.ts",
+    [
+      "Solar Volt",
+      "03.2020–07.2021",
+      "Konsultant procesu sprzedaży (freelance)",
+      "03.2026–05.2026",
+    ],
+  ],
+  ["src/components/KnowledgeSection.tsx", ["Wiedza sprzedażowa"]],
+  [
+    "src/data/articles.ts",
+    [
+      "Sprzedaż B2B zaczyna się przed ofertą",
+      "BATNA, ZOPA i ustępstwa",
+      "Proces sprzedaży B2B: od leada do konsekwentnego follow-upu",
+      "Handlowiec jako łącznik między klientem a operacjami firmy",
+    ],
+  ],
+  ["src/routing.ts", ["#/wiedza"]],
+]);
 ```
 
-Add negative assertions for unsupported AdVibes outcome language:
+Extract the exported `salesProject` object from `src/data/experience.ts` with balanced-brace parsing that ignores strings and comments. Fail clearly if the export or its closing brace cannot be found, then reject unsupported outcome language only inside that object:
 
 ```js
-const forbiddenAdVibesClaims = [
-  /AdVibes[^.]{0,160}(zwiększyłem|wzrost przychodu|ROAS|konwersj[aię]|wdrożon[oy])/i,
-];
+const experienceFile = "src/data/experience.ts";
+const salesProjectSource = extractExportedObject(
+  sourceByFile.get(experienceFile),
+  "salesProject",
+  experienceFile,
+);
+const forbiddenSalesProjectClaim =
+  /(zwiększyłem|wzrost przychodu|ROAS|konwersj[aę]|wdrożon[yo])/i;
 
-for (const claim of forbiddenAdVibesClaims) {
-  if (claim.test(source)) throw new Error(`Nieweryfikowalne twierdzenie AdVibes: ${claim}`);
+if (forbiddenSalesProjectClaim.test(salesProjectSource)) {
+  throw new Error(
+    `Nieweryfikowalne twierdzenie AdVibes: ${forbiddenSalesProjectClaim}`,
+  );
 }
 ```
 
