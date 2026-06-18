@@ -31,3 +31,18 @@ export type Capability = {
 };
 
 export type MethodStep = readonly [number: string, title: string, copy: string];
+
+export type ArticleSection = {
+  heading: string;
+  paragraphs: string[];
+  bullets?: string[];
+  example?: { label: "Przykład hipotetyczny" | "Praktyka"; body: string };
+};
+
+export type SalesArticle = {
+  slug: string;
+  title: string;
+  description: string;
+  readingTime: string;
+  sections: ArticleSection[];
+};
