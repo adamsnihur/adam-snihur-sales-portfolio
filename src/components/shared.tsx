@@ -119,3 +119,31 @@ export function ContactSection() {
 export function SiteFooter() {
   return <footer><span>Adam Śnihur</span><span>Sprzedaż B2B · Poznań</span></footer>;
 }
+
+export function ScrollToTopButton() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setVisible(window.scrollY > 300);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  return (
+    <button
+      className={`scroll-to-top ${visible ? "visible" : ""}`}
+      onClick={scrollToTop}
+      aria-label="Wróć do góry"
+    >
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M18 15l-6-6-6 6" />
+      </svg>
+    </button>
+  );
+}

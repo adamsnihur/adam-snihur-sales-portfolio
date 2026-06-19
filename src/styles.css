@@ -430,6 +430,97 @@ footer { display: flex; justify-content: space-between; padding: 2rem 0 3rem; co
 }
 
 /* ==========================================================================
+   Elementy przewijania i interaktywne (Scroll elements & indicators)
+   ========================================================================== */
+
+/* Pasek postępu scrolla */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--accent);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  z-index: 1000;
+}
+
+/* Przycisk powrotu do góry - Warm Glassmorphism */
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface), transparent 20%);
+  backdrop-filter: blur(12px);
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  opacity: 0;
+  transform: translateY(16px) scale(0.9);
+  transition: opacity 300ms var(--ease), transform 300ms var(--ease), background 200ms ease, border-color 200ms ease;
+  pointer-events: none;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.scroll-to-top:hover {
+  background: var(--surface);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.scroll-to-top svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  transition: transform 200ms var(--ease);
+}
+
+.scroll-to-top:hover svg {
+  transform: translateY(-2px);
+}
+
+/* Animacje sterowane scrollem (Scroll-driven animations support) */
+@supports ((animation-timeline: scroll()) and (animation-range: 0% 100%)) {
+  .scroll-progress {
+    animation: grow-progress auto linear;
+    animation-timeline: scroll();
+  }
+
+  .site-header {
+    animation: shrink-header auto linear;
+    animation-timeline: scroll();
+    animation-range: 0px 100px;
+  }
+}
+
+@keyframes grow-progress {
+  to { transform: scaleX(1); }
+}
+
+@keyframes shrink-header {
+  to {
+    box-shadow: 0 12px 30px -15px rgba(18, 18, 20, 0.08);
+    border-color: var(--line);
+    background: var(--surface);
+  }
+}
+
+/* ==========================================================================
    Accessibility overrides
    ========================================================================== */
 
@@ -437,6 +528,15 @@ footer { display: flex; justify-content: space-between; padding: 2rem 0 3rem; co
   html { scroll-behavior: auto; }
   *, *::before, *::after {
     animation: none !important;
+    transition: none !important;
+  }
+  .scroll-progress {
+    display: none;
+  }
+  .site-header {
+    animation: none !important;
+  }
+  .scroll-to-top {
     transition: none !important;
   }
 }

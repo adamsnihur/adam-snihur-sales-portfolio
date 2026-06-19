@@ -5,6 +5,7 @@ import { HomePage } from "./components/HomePage";
 import { KnowledgeIndex } from "./components/KnowledgeIndex";
 import { NotFoundPage } from "./components/NotFoundPage";
 import { ToolsIndex } from "./components/ToolsIndex";
+import { ScrollToTopButton } from "./components/shared";
 import { articles } from "./data/articles";
 import { getFocusTarget, getRouteTitle } from "./routeEffects";
 import { parseHash, type AppRoute } from "./routing";
@@ -88,11 +89,19 @@ function App() {
     };
   }, [route]);
 
-  if (route.kind === "home") return <HomePage />;
-  if (route.kind === "knowledge-index") return <KnowledgeIndex />;
-  if (route.kind === "article" && article) return <ArticlePage article={article} />;
-  if (route.kind === "tools-index") return <ToolsIndex />;
-  return <NotFoundPage />;
+  let pageElement = <NotFoundPage />;
+  if (route.kind === "home") pageElement = <HomePage />;
+  else if (route.kind === "knowledge-index") pageElement = <KnowledgeIndex />;
+  else if (route.kind === "article" && article) pageElement = <ArticlePage article={article} />;
+  else if (route.kind === "tools-index") pageElement = <ToolsIndex />;
+
+  return (
+    <>
+      <div className="scroll-progress" aria-hidden="true" />
+      {pageElement}
+      <ScrollToTopButton />
+    </>
+  );
 }
 
 createRoot(document.getElementById("root")!).render(
