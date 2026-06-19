@@ -51,7 +51,7 @@ Dane wszystkich artykułów znajdują się w `src/data/articles.ts`.
 
 Portret sprzedażowy znajduje się w `public/adam-snihur-sales-portrait.png`. Komponent strony głównej renderuje go z wymiarami intrinsic `971 × 1619`, aby przeglądarka zachowała właściwe proporcje i zarezerwowała miejsce przed załadowaniem obrazu.
 
-Każda zmiana copy portfolio lub portretu wymaga wcześniejszej akceptacji Adama.
+Każda zmiana copy artykułów lub portretu wymaga wcześniejszej akceptacji Adama.
 
 ## Publikacja
 

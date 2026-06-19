@@ -13,7 +13,10 @@ const required = [
 
 for (const file of required) {
   const path = join(root, file);
-  if (!existsSync(path) || statSync(path).size === 0) {
+  if (!existsSync(path)) {
+    throw new Error(`Brak wymaganego artefaktu: ${file}`);
+  }
+  if (file !== "dist/.nojekyll" && statSync(path).size === 0) {
     throw new Error(`Brak wymaganego artefaktu: ${file}`);
   }
 }
