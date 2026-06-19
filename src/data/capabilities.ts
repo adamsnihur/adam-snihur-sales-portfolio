@@ -25,4 +25,10 @@ export const capabilities: Capability[] = [
       "Łączę projektowanie pipeline’u i analizę rynku z rekomendacjami oraz koordynacją interesariuszy.",
     evidence: ["AdVibes", "GSK"],
   },
+  {
+    title: "AI w procesach sprzedaży",
+    description:
+      "Wykorzystuję sztuczną inteligencję i automatyzację do pogłębionego researchu klientów (profilowanie i enrichment), automatycznego pisania spersonalizowanych treści outreach oraz analizy jakościowej transkrypcji rozmów handlowych.",
+    evidence: ["AdVibes", "E-commerce"],
+  },
 ];

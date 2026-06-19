@@ -2,11 +2,13 @@ export type AppRoute =
   | { kind: "home" }
   | { kind: "knowledge-index" }
   | { kind: "article"; slug: string }
+  | { kind: "tools-index" }
   | { kind: "not-found" };
 
 export function parseHash(hash: string): AppRoute {
   if (!hash || !hash.startsWith("#/")) return { kind: "home" };
   if (hash === "#/wiedza") return { kind: "knowledge-index" };
+  if (hash === "#/narzedzia") return { kind: "tools-index" };
 
   if (hash.startsWith("#/wiedza/")) {
     const slug = hash.slice("#/wiedza/".length).trim();

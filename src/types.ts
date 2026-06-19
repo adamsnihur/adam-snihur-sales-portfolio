@@ -46,3 +46,11 @@ export type SalesArticle = {
   readingTime: string;
   sections: ArticleSection[];
 };
+
+export type SalesTool = {
+  name: string;
+  category: "outbound" | "crm" | "ai" | "automation";
+  description: string;
+  useCase: string;
+  benefits: string[];
+};

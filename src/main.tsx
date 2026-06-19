@@ -4,6 +4,7 @@ import { ArticlePage } from "./components/ArticlePage";
 import { HomePage } from "./components/HomePage";
 import { KnowledgeIndex } from "./components/KnowledgeIndex";
 import { NotFoundPage } from "./components/NotFoundPage";
+import { ToolsIndex } from "./components/ToolsIndex";
 import { articles } from "./data/articles";
 import { getFocusTarget, getRouteTitle } from "./routeEffects";
 import { parseHash, type AppRoute } from "./routing";
@@ -60,6 +61,7 @@ function App() {
   if (route.kind === "home") return <HomePage />;
   if (route.kind === "knowledge-index") return <KnowledgeIndex />;
   if (route.kind === "article" && article) return <ArticlePage article={article} />;
+  if (route.kind === "tools-index") return <ToolsIndex />;
   return <NotFoundPage />;
 }
 

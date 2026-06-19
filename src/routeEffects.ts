@@ -3,6 +3,7 @@ import type { AppRoute } from "./routing";
 const titles = {
   home: "Adam Śnihur | Sprzedaż B2B",
   knowledge: "Wiedza sprzedażowa | Adam Śnihur",
+  tools: "Narzędzia sprzedażowe | Adam Śnihur",
   notFound: "Nie znaleziono strony | Adam Śnihur",
 } as const;
 
@@ -14,6 +15,7 @@ export interface FocusTarget {
 export function getRouteTitle(route: AppRoute, articleTitle?: string): string {
   if (route.kind === "home") return titles.home;
   if (route.kind === "knowledge-index") return titles.knowledge;
+  if (route.kind === "tools-index") return titles.tools;
   if (route.kind === "article" && articleTitle) return `${articleTitle} | Adam Śnihur`;
   return titles.notFound;
 }

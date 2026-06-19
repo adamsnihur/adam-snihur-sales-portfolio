@@ -8,6 +8,7 @@ test("parseHash handles home, knowledge, article, and invalid hashes", () => {
     ["", { kind: "home" }],
     ["#kontakt", { kind: "home" }],
     ["#/wiedza", { kind: "knowledge-index" }],
+    ["#/narzedzia", { kind: "tools-index" }],
     ["#/wiedza/discovery-przed-oferta", { kind: "article", slug: "discovery-przed-oferta" }],
     ["#/wiedza/", { kind: "not-found" }],
     ["#/nieznane", { kind: "not-found" }],
@@ -24,6 +25,7 @@ test("parseHash handles home, knowledge, article, and invalid hashes", () => {
 test("getRouteTitle returns the title for every route outcome", () => {
   assert.equal(getRouteTitle({ kind: "home" }), "Adam Śnihur | Sprzedaż B2B");
   assert.equal(getRouteTitle({ kind: "knowledge-index" }), "Wiedza sprzedażowa | Adam Śnihur");
+  assert.equal(getRouteTitle({ kind: "tools-index" }), "Narzędzia sprzedażowe | Adam Śnihur");
   assert.equal(
     getRouteTitle({ kind: "article", slug: "fake-slug" }, "Testowy artykuł"),
     "Testowy artykuł | Adam Śnihur",
