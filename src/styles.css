@@ -87,9 +87,9 @@ h1 em { color: var(--accent); font-style: normal; }
 .text-link { display: inline-flex; align-items: center; gap: .45rem; padding: .7rem 0; font-weight: 700; border-bottom: 1px solid var(--ink); }
 
 .hero-proof { position: relative; padding-top: 2.5rem; }
-.portrait-wrap { position: relative; width: min(100%, 390px); margin-left: auto; aspect-ratio: .88; overflow: hidden; border-radius: 46% 46% 1.5rem 1.5rem; background: var(--ink); }
+.portrait-wrap { position: relative; width: min(100%, 390px); margin-left: auto; aspect-ratio: .88; overflow: hidden; border-radius: 46% 46% 1.5rem 1.5rem; background: var(--surface); }
 .portrait-wrap::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(18,18,20,.72)); }
-.portrait-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; filter: saturate(.82) contrast(1.02); transform: scale(1.08); }
+.portrait-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; filter: saturate(.82) contrast(1.02); transform: scale(1.02); }
 .portrait-label { position: absolute; z-index: 1; left: 1.3rem; bottom: 1.1rem; color: white; font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; }
 .proof-list { position: relative; z-index: 2; width: calc(100% - 2rem); margin: -1rem 0 0 auto; background: var(--surface); border: 1px solid var(--line); border-radius: 1.25rem; padding: .4rem 1.2rem; box-shadow: 0 28px 70px -45px rgba(18,18,20,.65); }
 .proof-list div { display: grid; grid-template-columns: 1fr 1.65fr; gap: 1rem; padding: .9rem 0; border-bottom: 1px solid var(--line); }

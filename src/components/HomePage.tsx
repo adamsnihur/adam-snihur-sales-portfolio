@@ -37,7 +37,7 @@ export function HomePage() {
 
           <aside className="hero-proof" aria-label="Najważniejsze doświadczenia" data-reveal>
             <div className="portrait-wrap">
-              <img src="./adam-snihur-main-portfolio.jpg" alt="Portret Adama Śnihura" width="900" height="900" />
+              <img src="./adam-snihur-sales-portrait.png" alt="Portret Adama Śnihura" width="971" height="1619" />
               <span className="portrait-label">Poznań / Polska</span>
             </div>
             <div className="proof-list">
