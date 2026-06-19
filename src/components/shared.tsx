@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 interface SectionTitleProps {
   readonly label: string;
   readonly title: string;
@@ -36,6 +38,22 @@ export function SectionTitle({ label, title, intro }: Readonly<SectionTitleProps
 
 export function SiteHeader({ knowledgeView }: Readonly<SiteHeaderProps>) {
   const sectionPrefix = knowledgeView ? "./" : "";
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") setMenuOpen(false);
+      };
+      window.addEventListener("keydown", handleKeyDown);
+      return () => {
+        document.body.style.overflow = "";
+        window.removeEventListener("keydown", handleKeyDown);
+      };
+    }
+    return undefined;
+  }, [menuOpen]);
 
   return (
     <header className="site-header">
@@ -50,6 +68,37 @@ export function SiteHeader({ knowledgeView }: Readonly<SiteHeaderProps>) {
       <a className="button button-small button-dark" href="./CV_Adam_Snihur_Przedstawiciel_Handlowy.pdf" download>
         CV <DownloadIcon />
       </a>
+      <button
+        className="menu-toggle"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-expanded={menuOpen}
+        aria-label={menuOpen ? "Zamknij menu" : "Otwórz menu"}
+      >
+        {menuOpen ? (
+          <svg viewBox="0 0 24 24" aria-hidden="true" className="icon-close">
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
+        ) : (
+          <svg viewBox="0 0 24 24" aria-hidden="true" className="icon-menu">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        )}
+      </button>
+
+      {menuOpen && (
+        <div className="mobile-nav-overlay" onClick={() => setMenuOpen(false)}>
+          <nav className="mobile-nav-menu" onClick={(e) => e.stopPropagation()}>
+            <a href={`${sectionPrefix}#doswiadczenie`} onClick={() => setMenuOpen(false)}>Doświadczenie</a>
+            <a href={`${sectionPrefix}#podejscie`} onClick={() => setMenuOpen(false)}>Podejście</a>
+            <a href={knowledgeView ? "./#wiedza" : "#wiedza"} onClick={() => setMenuOpen(false)}>Wiedza</a>
+            <a href="#/narzedzia" onClick={() => setMenuOpen(false)}>Narzędzia</a>
+            <a href={`${sectionPrefix}#kontakt`} onClick={() => setMenuOpen(false)}>Kontakt</a>
+            <a className="button button-dark" href="./CV_Adam_Snihur_Przedstawiciel_Handlowy.pdf" download onClick={() => setMenuOpen(false)}>
+              Pobierz CV <DownloadIcon />
+            </a>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

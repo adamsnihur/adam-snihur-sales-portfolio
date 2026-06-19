@@ -7,7 +7,7 @@ export function KnowledgeIndex() {
       <a className="skip-link" href="#main">Przejdź do treści</a>
       <SiteHeader knowledgeView />
       <main className="knowledge-view" id="main">
-        <header className="knowledge-hero">
+        <header className="knowledge-hero" data-reveal>
           <p className="eyebrow">Biblioteka sprzedaży B2B</p>
           <h1 tabIndex={-1}>Wiedza sprzedażowa</h1>
           <p>
@@ -17,7 +17,7 @@ export function KnowledgeIndex() {
         </header>
         <div className="knowledge-list">
           {articles.map((article, index) => (
-            <article key={article.slug}>
+            <article key={article.slug} data-reveal>
               <span aria-hidden="true">0{index + 1}</span>
               <div>
                 <p className="article-meta">{article.readingTime} czytania</p>

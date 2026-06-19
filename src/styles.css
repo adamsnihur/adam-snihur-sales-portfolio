@@ -209,4 +209,234 @@ main h1[tabindex="-1"]:focus { outline: 3px solid var(--accent); outline-offset:
 .contact-actions > a:not(.button) { color: #b8b6b0; border-bottom: 1px solid #6f6e6a; }
 footer { display: flex; justify-content: space-between; padding: 2rem 0 3rem; color: var(--muted); }
 
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+/* ==========================================================================
+   Animacje i przejścia (Scroll Reveal & Transitions)
+   ========================================================================== */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 800ms var(--ease), transform 800ms var(--ease);
+  will-change: opacity, transform;
+}
+
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mikro-interakcje strzałek (Arrow displacement on hover) */
+.button svg,
+.article-link svg,
+.text-link svg,
+.back-link svg,
+.contact-actions a svg {
+  transition: transform 220ms var(--ease);
+}
+
+.button:hover svg,
+.article-link:hover svg,
+.text-link:hover svg,
+.back-link:hover svg,
+.contact-actions a:hover svg {
+  transform: translateX(4px);
+}
+
+/* Wygładzenie przejść kart wiedzy */
+.knowledge-card {
+  transition: border-color 300ms ease, transform 300ms var(--ease);
+}
+.knowledge-card:hover {
+  border-color: var(--accent);
+}
+
+/* ==========================================================================
+   Menu Mobilne (Hamburger & Overlay Drawer)
+   ========================================================================== */
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: .5rem;
+  color: var(--ink);
+  align-items: center;
+  justify-content: center;
+  z-index: 101;
+}
+
+.menu-toggle svg {
+  width: 24px;
+  height: 24px;
+}
+
+.mobile-nav-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--paper), transparent 6%);
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 250ms var(--ease);
+}
+
+.mobile-nav-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  font-family: "Outfit", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.mobile-nav-menu a {
+  color: var(--muted);
+  transition: color 180ms ease, transform 180ms var(--ease);
+}
+
+.mobile-nav-menu a:hover {
+  color: var(--ink);
+  transform: scale(1.05);
+}
+
+.mobile-nav-menu .button {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ==========================================================================
+   Spis Narzędzi Sprzedażowych (Tools Index styling)
+   ========================================================================== */
+
+.tools-view {
+  width: var(--container);
+  margin-inline: auto;
+  min-height: 70vh;
+  padding: clamp(5rem, 10vw, 8rem) 0;
+}
+
+.tools-hero {
+  max-width: 820px;
+  margin-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.tools-hero h1 {
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: .98;
+  letter-spacing: -.05em;
+  margin-bottom: 1.5rem;
+}
+
+.tools-hero p {
+  max-width: 680px;
+  color: var(--muted);
+  font-size: 1.15rem;
+  line-height: 1.65;
+}
+
+.tools-content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4rem, 8vw, 6rem);
+  margin-bottom: 4rem;
+}
+
+.tools-category-section {
+  border-top: 1px solid var(--ink);
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: .35fr 1fr;
+  gap: 2.5rem;
+}
+
+.category-header h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.1;
+  letter-spacing: -.03em;
+  color: var(--ink);
+}
+
+.tools-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.tool-card {
+  padding: 2.2rem;
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  background: var(--surface);
+  transition: transform 300ms var(--ease), border-color 300ms ease;
+  cursor: pointer;
+}
+
+.tool-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.tool-card-header h3 {
+  font-size: 1.5rem;
+  letter-spacing: -.02em;
+  margin-bottom: 0.5rem;
+  color: var(--ink);
+}
+
+.tool-description {
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.tool-usecase, .tool-benefits {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.tool-usecase strong, .tool-benefits strong {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+}
+
+.tool-usecase p {
+  margin: 0;
+  color: var(--ink);
+}
+
+.tool-benefits ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--ink);
+}
+
+.tool-benefits li {
+  margin-bottom: 0.25rem;
+}
+
+/* ==========================================================================
+   Accessibility overrides
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

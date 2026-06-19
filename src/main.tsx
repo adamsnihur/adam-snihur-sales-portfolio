@@ -63,6 +63,31 @@ function App() {
     return () => window.cancelAnimationFrame(frame);
   }, [article, hash, isInitial, route]);
 
+  useEffect(() => {
+    const reveals = document.querySelectorAll("[data-reveal]");
+    
+    // Clear previous state before observing to ensure animations rerun on navigation
+    reveals.forEach((el) => el.classList.remove("revealed"));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.05, rootMargin: "0px 0px -50px 0px" }
+    );
+
+    reveals.forEach((el) => observer.observe(el));
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [route]);
+
   if (route.kind === "home") return <HomePage />;
   if (route.kind === "knowledge-index") return <KnowledgeIndex />;
   if (route.kind === "article" && article) return <ArticlePage article={article} />;

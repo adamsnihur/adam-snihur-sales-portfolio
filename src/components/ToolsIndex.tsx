@@ -17,7 +17,7 @@ export function ToolsIndex() {
       <a className="skip-link" href="#main">Przejdź do treści</a>
       <SiteHeader knowledgeView />
       <main className="tools-view" id="main">
-        <header className="tools-hero">
+        <header className="tools-hero" data-reveal>
           <p className="eyebrow">Stos technologiczny sprzedaży B2B</p>
           <h1 tabIndex={-1}>Narzędzia sprzedażowe</h1>
           <p>
@@ -33,12 +33,12 @@ export function ToolsIndex() {
 
             return (
               <section className="tools-category-section" key={categoryKey} aria-labelledby={`cat-${categoryKey}`}>
-                <div className="category-header">
+                <div className="category-header" data-reveal>
                   <h2 id={`cat-${categoryKey}`}>{categoryNames[categoryKey]}</h2>
                 </div>
                 <div className="tools-list">
                   {categoryTools.map((tool) => (
-                    <article className="tool-card" key={tool.name}>
+                    <article className="tool-card" key={tool.name} data-reveal>
                       <header className="tool-card-header">
                         <h3>{tool.name}</h3>
                       </header>
