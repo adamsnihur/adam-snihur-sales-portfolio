@@ -34,14 +34,17 @@ export function SectionTitle({ label, title, intro }: Readonly<SectionTitleProps
   );
 }
 
-export function SiteHeader(_props: Readonly<SiteHeaderProps>) {
+export function SiteHeader({ knowledgeView }: Readonly<SiteHeaderProps>) {
+  const sectionPrefix = knowledgeView ? "./" : "";
+
   return (
     <header className="site-header">
-      <a className="wordmark" href="#top" aria-label="Adam Śnihur — początek strony">Adam Śnihur</a>
+      <a className="wordmark" href={knowledgeView ? "./" : "#top"} aria-label="Adam Śnihur — początek strony">Adam Śnihur</a>
       <nav aria-label="Główna nawigacja">
-        <a href="#doswiadczenie">Doświadczenie</a>
-        <a href="#podejscie">Podejście</a>
-        <a href="#kontakt">Kontakt</a>
+        <a href={`${sectionPrefix}#doswiadczenie`}>Doświadczenie</a>
+        <a href={`${sectionPrefix}#podejscie`}>Podejście</a>
+        <a href={knowledgeView ? "./#wiedza" : "#wiedza"}>Wiedza</a>
+        <a href={`${sectionPrefix}#kontakt`}>Kontakt</a>
       </nav>
       <a className="button button-small button-dark" href="./CV_Adam_Snihur_Przedstawiciel_Handlowy.pdf" download>
         CV <DownloadIcon />

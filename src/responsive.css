@@ -16,6 +16,8 @@
   .supporting-list article:nth-child(odd) { border-right: 0; }
   .supporting-list article:nth-child(even) { padding-left: 0; }
   .capabilities-section, .contact { grid-template-columns: 1fr; }
+  .knowledge-grid { grid-template-columns: 1fr; }
+  .knowledge-card, .knowledge-card + .knowledge-card { padding: 2rem 0; border-left: 0; }
 }
 
 @media (max-width: 620px) {
@@ -48,5 +50,12 @@
   .capability-group:nth-child(odd) { border-right: 0; }
   .contact { width: calc(100% - 1rem); padding: 2.2rem 1.5rem; border-radius: 1.3rem; }
   .contact h2 br { display: none; }
+  .knowledge-section { padding-top: 1rem; }
+  .knowledge-list > article { grid-template-columns: 2.5rem minmax(0, 1fr); gap: .75rem; }
+  .article-shell { padding-top: 2.5rem; }
+  .article-page { margin-top: 2.5rem; }
+  .article-page > section { padding-top: 2.7rem; }
+  .article-example { padding: 1.2rem; }
+  .not-found-actions { align-items: flex-start; flex-direction: column; }
   footer { flex-direction: column; gap: .4rem; }
 }

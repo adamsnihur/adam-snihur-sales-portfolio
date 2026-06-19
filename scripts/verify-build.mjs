@@ -33,15 +33,21 @@ const sourceFiles = [
   "src/components/KnowledgeSection.tsx",
   "src/components/KnowledgeIndex.tsx",
   "src/components/ArticlePage.tsx",
+  "src/components/NotFoundPage.tsx",
 ];
 
 const missingSourceFiles = sourceFiles.filter(
   (file) => !existsSync(join(root, file)),
 );
+
+if (missingSourceFiles.length > 0) {
+  throw new Error(
+    `Brak zaplanowanych modułów źródłowych: ${missingSourceFiles.join(", ")}`,
+  );
+}
+
 const sourceByFile = new Map(
-  sourceFiles
-    .filter((file) => !missingSourceFiles.includes(file))
-    .map((file) => [file, readFileSync(join(root, file), "utf8")]),
+  sourceFiles.map((file) => [file, readFileSync(join(root, file), "utf8")]),
 );
 const assertionsByFile = new Map([
   [
@@ -52,6 +58,8 @@ const assertionsByFile = new Map([
       '<ProjectCaseStudy project={salesProject} />',
       'import { CapabilityGroups } from "./CapabilityGroups"',
       '<CapabilityGroups />',
+      'import { KnowledgeSection } from "./KnowledgeSection"',
+      '<KnowledgeSection />',
     ],
   ],
   [
@@ -82,7 +90,10 @@ const assertionsByFile = new Map([
       'machinePeriod: "2026-03/2026-05"',
     ],
   ],
-  ["src/components/KnowledgeSection.tsx", ["Wiedza sprzedażowa"]],
+  [
+    "src/components/KnowledgeSection.tsx",
+    ["Wiedza sprzedażowa", "#/wiedza/", "#/wiedza"],
+  ],
   [
     "src/data/articles.ts",
     [
@@ -90,14 +101,25 @@ const assertionsByFile = new Map([
       "BATNA, ZOPA i ustępstwa",
       "Proces sprzedaży B2B: od leada do konsekwentnego follow-upu",
       "Handlowiec jako łącznik między klientem a operacjami firmy",
+      'slug: "discovery-przed-oferta"',
+      'slug: "batna-zopa-ustepstwa"',
+      'slug: "proces-b2b-follow-up"',
+      'slug: "handlowiec-klient-operacje"',
     ],
   ],
-  ["src/routing.ts", ["#/wiedza"]],
+  [
+    "src/routing.ts",
+    [
+      "#/wiedza",
+      "#/wiedza/",
+    ],
+  ],
+  ["src/main.tsx", ["hashchange", "parseHash", "document.title"]],
 ]);
 
 for (const [file, assertions] of assertionsByFile) {
   const source = sourceByFile.get(file);
-  if (!source) continue;
+  if (!source) throw new Error(`Brak źródła do asercji: ${file}`);
   for (const assertion of assertions) {
     if (!source.includes(assertion)) {
       throw new Error(`Brak treści krytycznej w ${file}: ${assertion}`);
@@ -201,12 +223,6 @@ for (const [file, source] of sourceByFile) {
   if (/lorem ipsum|todo|placeholder/i.test(source)) {
     throw new Error(`W kodzie pozostała treść tymczasowa: ${file}`);
   }
-}
-
-if (missingSourceFiles.length > 0) {
-  throw new Error(
-    `Brak zaplanowanych modułów źródłowych: ${missingSourceFiles.join(", ")}`,
-  );
 }
 
 console.log("Build verification: PASS");

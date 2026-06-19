@@ -1,5 +1,6 @@
 import { methods, salesExperience, salesProject, supportingExperience } from "../data/experience";
 import { CapabilityGroups } from "./CapabilityGroups";
+import { KnowledgeSection } from "./KnowledgeSection";
 import { ProjectCaseStudy } from "./ProjectCaseStudy";
 import {
   ArrowIcon,
@@ -20,7 +21,7 @@ export function HomePage() {
         <section className="hero" id="top">
           <div className="hero-copy" data-reveal>
             <p className="availability"><span /> Otwarty na role sprzedażowe B2B</p>
-            <h1>Relacja otwiera drzwi.<br /><em>Analiza domyka sprzedaż.</em></h1>
+            <h1 tabIndex={-1}>Relacja otwiera drzwi.<br /><em>Analiza domyka sprzedaż.</em></h1>
             <p className="hero-lead">
               Łączę doświadczenie w pozyskiwaniu klientów i negocjacjach z analitycznym sposobem myślenia. Rozumiem zarówno rozmowę handlową, jak i procesy stojące za dobrą obsługą klienta.
             </p>
@@ -90,6 +91,8 @@ export function HomePage() {
         </section>
 
         <CapabilityGroups />
+
+        <KnowledgeSection />
 
         <ContactSection />
       </main>
