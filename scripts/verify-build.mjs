@@ -24,6 +24,7 @@ if (!assets.some((file) => file.endsWith(".js")) || !assets.some((file) => file.
 const sourceFiles = [
   "src/main.tsx",
   "src/routing.ts",
+  "src/routeEffects.ts",
   "src/data/experience.ts",
   "src/data/capabilities.ts",
   "src/data/articles.ts",
@@ -114,7 +115,8 @@ const assertionsByFile = new Map([
       "#/wiedza/",
     ],
   ],
-  ["src/main.tsx", ["hashchange", "parseHash", "document.title"]],
+  ["src/routeEffects.ts", ["getRouteTitle", "getFocusTarget", "scrollTarget"]],
+  ["src/main.tsx", ["hashchange", "parseHash", "getRouteTitle", "getFocusTarget"]],
 ]);
 
 for (const [file, assertions] of assertionsByFile) {

@@ -9,7 +9,7 @@ export function parseHash(hash: string): AppRoute {
   if (hash === "#/wiedza") return { kind: "knowledge-index" };
 
   if (hash.startsWith("#/wiedza/")) {
-    const slug = hash.slice("#/wiedza/".length);
+    const slug = hash.slice("#/wiedza/".length).trim();
     return /^[a-z0-9-]+$/.test(slug)
       ? { kind: "article", slug }
       : { kind: "not-found" };

@@ -447,10 +447,11 @@ git commit -m "content: add approved sales knowledge articles"
 - Modify: `src/styles.css`
 - Modify: `src/responsive.css`
 - Test: `scripts/verify-build.mjs`
+- Test: `scripts/routing.test.mjs`
 
-- [ ] **Step 1: Add failing routing and article-discoverability assertions**
+- [ ] **Step 1: Add failing routing behavior and article-discoverability tests**
 
-Extend `scripts/verify-build.mjs` to require the route literals `#/wiedza`, `#/wiedza/`, `hashchange`, and all four slugs. Run `npm test`.
+Create `scripts/routing.test.mjs` using `node:test` and strict assertions. Cover empty hash, normal anchor, knowledge index, valid article, empty slug, unknown route, malformed/non-ASCII slug, whitespace-trimmed slug, every document title outcome, and focus-target decisions using fake document targets. Extend `scripts/verify-build.mjs` to require the route literals `#/wiedza`, `#/wiedza/`, `hashchange`, and all four slugs. Run `npm test`.
 
 Expected: FAIL for missing routing implementation.
 
@@ -528,7 +529,7 @@ Use the existing typography and tokens. Keep article body width near 720 px, lin
 
 - [ ] **Step 9: Verify build and source contract**
 
-Run: `npm run build && npm test`
+Run with Node 24: `npm run build && npm test`. The `npm test` command must execute both `scripts/verify-build.mjs` and `scripts/routing.test.mjs`.
 
 Expected: PASS except for portrait use assertion if not yet integrated.
 

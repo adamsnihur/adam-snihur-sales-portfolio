@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "test": "node scripts/verify-build.mjs"
+    "test": "node scripts/verify-build.mjs && node scripts/routing.test.mjs"
   },
   "dependencies": {
     "react": "19.2.7",
