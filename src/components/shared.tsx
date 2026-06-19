@@ -39,7 +39,7 @@ export function SiteHeader({ knowledgeView }: Readonly<SiteHeaderProps>) {
 
   return (
     <header className="site-header">
-      <a className="wordmark" href={knowledgeView ? "./" : "#top"} aria-label="Adam Śnihur — początek strony">Adam Śnihur</a>
+      <a className="wordmark" href={knowledgeView ? "./" : "#top"} aria-label="Adam Śnihur - początek strony">Adam Śnihur</a>
       <nav aria-label="Główna nawigacja">
         <a href={`${sectionPrefix}#doswiadczenie`}>Doświadczenie</a>
         <a href={`${sectionPrefix}#podejscie`}>Podejście</a>

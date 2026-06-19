@@ -17,7 +17,7 @@ export function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
         <header className="project-header">
           <div>
             <p className="eyebrow">03 / Projekt freelance</p>
-            <h2 id="project-title">{project.role} — {project.company}</h2>
+            <h2 id="project-title">{project.role} - {project.company}</h2>
           </div>
           <time dateTime={project.machinePeriod}>{project.period}</time>
         </header>

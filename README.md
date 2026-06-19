@@ -1,4 +1,4 @@
-# Adam Śnihur — portfolio sprzedażowe
+# Adam Śnihur - portfolio sprzedażowe
 
 Jednostronicowe portfolio rekrutacyjne pod role przedstawiciela handlowego, account managera i sprzedaży B2B.
 

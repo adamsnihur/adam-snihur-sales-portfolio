@@ -3,7 +3,7 @@ import type { SalesArticle } from "../types";
 export const articles: SalesArticle[] = [
   {
     slug: "discovery-przed-oferta",
-    title: "Sprzedaż B2B zaczyna się przed ofertą — pytania dobrego discovery",
+    title: "Sprzedaż B2B zaczyna się przed ofertą - pytania dobrego discovery",
     description:
       "Jak rozpoznać sytuację klienta, uporządkować proces decyzyjny i sprawdzić gotowość do rozmowy o rozwiązaniu.",
     readingTime: "4 min",
@@ -87,7 +87,7 @@ export const articles: SalesArticle[] = [
   },
   {
     slug: "batna-zopa-ustepstwa",
-    title: "BATNA, ZOPA i ustępstwa — praktyczne przygotowanie do negocjacji",
+    title: "BATNA, ZOPA i ustępstwa - praktyczne przygotowanie do negocjacji",
     description:
       "Prosty warsztat przygotowania stanowiska, granic i wymian, które chronią wartość porozumienia.",
     readingTime: "4 min",
@@ -128,7 +128,7 @@ export const articles: SalesArticle[] = [
         heading: "ZOPA: gdzie może istnieć porozumienie",
         paragraphs: [
           "ZOPA to obszar możliwego porozumienia pomiędzy granicami obu stron. Czasem dotyczy ceny, ale w sprzedaży B2B zwykle obejmuje kilka zmiennych: zakres, termin, sposób płatności, długość zobowiązania, poziom wsparcia czy udział klienta w pracach. Szerszy obraz zwiększa szansę na rozwiązanie bez prostego dzielenia różnicy.",
-          "Przed rozmową ZOPA jest hipotezą. Ujawnia się stopniowo przez pytania, warianty i reakcje. Jeśli minimalne akceptowalne warunki dostawcy nie spotykają się z maksymalnymi możliwościami klienta, porozumienia w obecnym kształcie nie ma. Wtedy należy zmienić zakres, harmonogram albo inne założenie — nie udawać, że każdą lukę zasypie rabat.",
+          "Przed rozmową ZOPA jest hipotezą. Ujawnia się stopniowo przez pytania, warianty i reakcje. Jeśli minimalne akceptowalne warunki dostawcy nie spotykają się z maksymalnymi możliwościami klienta, porozumienia w obecnym kształcie nie ma. Wtedy należy zmienić zakres, harmonogram albo inne założenie - nie udawać, że każdą lukę zasypie rabat.",
         ],
         example: {
           label: "Przykład hipotetyczny",

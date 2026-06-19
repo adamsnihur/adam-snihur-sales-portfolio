@@ -1,4 +1,4 @@
-# Brief — portfolio sprzedażowe Adama Śnihura
+# Brief - portfolio sprzedażowe Adama Śnihura
 
 ## Odbiorca
 
@@ -14,7 +14,7 @@ Zaufanie, sprawczość, energia handlowa i profesjonalny spokój.
 
 ## Punkty odniesienia
 
-Precyzja Stripe, dyscyplina Linear i czytelność nowoczesnego profilu executive — bez kopiowania ich warstwy wizualnej.
+Precyzja Stripe, dyscyplina Linear i czytelność nowoczesnego profilu executive - bez kopiowania ich warstwy wizualnej.
 
 ## Czego strona nie może przypominać
 

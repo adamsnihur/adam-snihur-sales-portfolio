@@ -78,7 +78,7 @@ export function HomePage() {
         <ProjectCaseStudy project={salesProject} />
 
         <section className="supporting">
-          <SectionTitle label="04 / Szersza perspektywa" title="Doświadczenie, które wzmacnia sprzedaż" intro="Analityka, marketing i koordynacja projektów pomagają mi lepiej rozumieć organizację klienta — nie odciągają mnie od celu handlowego." />
+          <SectionTitle label="04 / Szersza perspektywa" title="Doświadczenie, które wzmacnia sprzedaż" intro="Analityka, marketing i koordynacja projektów pomagają mi lepiej rozumieć organizację klienta - nie odciągają mnie od celu handlowego." />
           <div className="supporting-list">
             {supportingExperience.map((item) => (
               <article key={`${item.company}-${item.role}`} data-reveal>
