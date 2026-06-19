@@ -6,7 +6,7 @@ export const articles: SalesArticle[] = [
     title: "Sprzedaż B2B zaczyna się przed ofertą — pytania dobrego discovery",
     description:
       "Jak rozpoznać sytuację klienta, uporządkować proces decyzyjny i sprawdzić gotowość do rozmowy o rozwiązaniu.",
-    readingTime: "6 min czytania",
+    readingTime: "4 min",
     sections: [
       {
         heading: "Oferta wysłana za wcześnie staje się zgadywanką",
@@ -90,7 +90,7 @@ export const articles: SalesArticle[] = [
     title: "BATNA, ZOPA i ustępstwa — praktyczne przygotowanie do negocjacji",
     description:
       "Prosty warsztat przygotowania stanowiska, granic i wymian, które chronią wartość porozumienia.",
-    readingTime: "6 min czytania",
+    readingTime: "4 min",
     sections: [
       {
         heading: "Negocjacje przegrywa się często przed spotkaniem",
@@ -174,7 +174,7 @@ export const articles: SalesArticle[] = [
     title: "Proces sprzedaży B2B: od leada do konsekwentnego follow-upu",
     description:
       "Jak oprzeć pipeline na decyzjach klienta, utrzymać dyscyplinę kolejnych kroków i prowadzić użyteczny przegląd szans.",
-    readingTime: "7 min czytania",
+    readingTime: "5 min",
     sections: [
       {
         heading: "Pipeline pełen kontaktów nie musi oznaczać sprzedaży",
@@ -261,7 +261,7 @@ export const articles: SalesArticle[] = [
     title: "Handlowiec jako łącznik między klientem a operacjami firmy",
     description:
       "Jak przekładać kontekst klienta na wykonalne ustalenia, prowadzić feedback i chronić zaufanie po podpisaniu umowy.",
-    readingTime: "6 min czytania",
+    readingTime: "5 min",
     sections: [
       {
         heading: "Sprzedaż nie kończy się na przekazaniu umowy",
