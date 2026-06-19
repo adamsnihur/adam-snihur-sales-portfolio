@@ -61,7 +61,7 @@ export const articles: SalesArticle[] = [
           "Problem i jego znaczenie zostały potwierdzone przez klienta.",
           "Kryteria wyboru oraz oczekiwany rezultat są wystarczająco jasne.",
           "Wiadomo, kto wpływa na decyzję i jak będzie przebiegać akceptacja.",
-          "Omówiono realne ograniczenia: termin, zasoby, zakres i budżetowy kontekst.",
+          "Omówiono realne ograniczenia: termin, zasoby, zakres i ramy budżetowe.",
           "Obie strony zaakceptowały konkretny następny krok oraz termin.",
         ],
       },
@@ -80,7 +80,7 @@ export const articles: SalesArticle[] = [
         ],
         example: {
           label: "Praktyka",
-          body: "W sprzedaży bezpośredniej i B2B punkt wyjścia pozostaje podobny: najpierw badanie potrzeb i pytań klienta, potem dopasowanie propozycji. Ta kolejność pomaga rozmawiać o wartości w kontekście konkretnej sytuacji, zamiast recytować pełną listę możliwości.",
+          body: "W sprzedaży bezpośredniej i B2B punkt wyjścia pozostaje podobny: najpierw badanie potrzeb poprzez pytania, potem dopasowanie propozycji. Ta kolejność pomaga rozmawiać o wartości w kontekście konkretnej sytuacji, zamiast recytować pełną listę możliwości.",
         },
       },
     ],
@@ -317,7 +317,7 @@ export const articles: SalesArticle[] = [
         ],
         example: {
           label: "Praktyka",
-          body: "W pracy analitycznej i koordynacyjnej wspólnym mianownikiem jest łączenie informacji od różnych stron, przygotowanie rekomendacji oraz prowadzenie działań przez zależności. W sprzedaży ten sam sposób pracy pomaga zachować kontekst klienta podczas przejścia od rozmowy do realizacji.",
+          body: "W pracy analitycznej i koordynacyjnej wspólnym mianownikiem jest łączenie informacji od różnych stron, przygotowanie rekomendacji oraz prowadzenie działań z uwzględnieniem zależności. W sprzedaży ten sam sposób pracy pomaga zachować kontekst klienta podczas przejścia od rozmowy do realizacji.",
         },
       },
       {
