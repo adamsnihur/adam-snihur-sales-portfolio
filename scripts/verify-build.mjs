@@ -5,6 +5,8 @@ import { fileURLToPath } from "node:url";
 const root = fileURLToPath(new URL("..", import.meta.url));
 const required = [
   "dist/index.html",
+  "dist/.nojekyll",
+  "dist/robots.txt",
   "dist/CV_Adam_Snihur_Przedstawiciel_Handlowy.pdf",
   "dist/adam-snihur-sales-portrait.png",
 ];
@@ -21,7 +23,25 @@ if (!assets.some((file) => file.endsWith(".js")) || !assets.some((file) => file.
   throw new Error("Build nie zawiera kompletu zasobów JS/CSS");
 }
 
-const sourceFiles = [
+function collectSourceFiles(directory, relativeDirectory) {
+  return readdirSync(directory, { withFileTypes: true })
+    .flatMap((entry) => {
+      const path = join(directory, entry.name);
+      const relativePath = join(relativeDirectory, entry.name);
+
+      if (entry.isDirectory()) {
+        return collectSourceFiles(path, relativePath);
+      }
+
+      const isTypeScript = /\.(?:ts|tsx)$/.test(entry.name);
+      return isTypeScript && !entry.name.endsWith(".d.ts")
+        ? [relativePath]
+        : [];
+    })
+    .sort();
+}
+
+const criticalSourceFiles = [
   "src/main.tsx",
   "src/routing.ts",
   "src/routeEffects.ts",
@@ -35,9 +55,10 @@ const sourceFiles = [
   "src/components/KnowledgeIndex.tsx",
   "src/components/ArticlePage.tsx",
   "src/components/NotFoundPage.tsx",
+  "src/components/shared.tsx",
 ];
 
-const missingSourceFiles = sourceFiles.filter(
+const missingSourceFiles = criticalSourceFiles.filter(
   (file) => !existsSync(join(root, file)),
 );
 
@@ -48,7 +69,7 @@ if (missingSourceFiles.length > 0) {
 }
 
 const sourceByFile = new Map(
-  sourceFiles.map((file) => [file, readFileSync(join(root, file), "utf8")]),
+  criticalSourceFiles.map((file) => [file, readFileSync(join(root, file), "utf8")]),
 );
 const assertionsByFile = new Map([
   [
@@ -61,6 +82,9 @@ const assertionsByFile = new Map([
       '<CapabilityGroups />',
       'import { KnowledgeSection } from "./KnowledgeSection"',
       '<KnowledgeSection />',
+      'src="./adam-snihur-sales-portrait.png"',
+      'width="971"',
+      'height="1619"',
     ],
   ],
   [
@@ -102,21 +126,43 @@ const assertionsByFile = new Map([
       "BATNA, ZOPA i ustępstwa",
       "Proces sprzedaży B2B: od leada do konsekwentnego follow-upu",
       "Handlowiec jako łącznik między klientem a operacjami firmy",
-      'slug: "discovery-przed-oferta"',
-      'slug: "batna-zopa-ustepstwa"',
-      'slug: "proces-b2b-follow-up"',
-      'slug: "handlowiec-klient-operacje"',
+    ],
+  ],
+  [
+    "src/components/shared.tsx",
+    [
+      "./CV_Adam_Snihur_Przedstawiciel_Handlowy.pdf",
+      "mailto:adam.snihur@gmail.com",
+      "https://www.linkedin.com/in/adam-snihur-b66b3318b/",
     ],
   ],
   [
     "src/routing.ts",
     [
+      "export function parseHash",
       "#/wiedza",
       "#/wiedza/",
     ],
   ],
-  ["src/routeEffects.ts", ["getRouteTitle", "getFocusTarget", "scrollTarget"]],
-  ["src/main.tsx", ["hashchange", "parseHash", "getRouteTitle", "getFocusTarget"]],
+  [
+    "src/routeEffects.ts",
+    [
+      "export function getRouteTitle",
+      "export function getFocusTarget",
+      "scrollTarget",
+    ],
+  ],
+  [
+    "src/main.tsx",
+    [
+      "hashchange",
+      'from "./routing"',
+      'from "./routeEffects"',
+      "parseHash",
+      "getRouteTitle",
+      "getFocusTarget",
+    ],
+  ],
 ]);
 
 for (const [file, assertions] of assertionsByFile) {
@@ -126,6 +172,24 @@ for (const [file, assertions] of assertionsByFile) {
     if (!source.includes(assertion)) {
       throw new Error(`Brak treści krytycznej w ${file}: ${assertion}`);
     }
+  }
+}
+
+const articleSlugs = [
+  "discovery-przed-oferta",
+  "batna-zopa-ustepstwa",
+  "proces-b2b-follow-up",
+  "handlowiec-klient-operacje",
+];
+const articlesSource = sourceByFile.get("src/data/articles.ts");
+
+if (!articlesSource) {
+  throw new Error("Brak źródła danych artykułów");
+}
+
+for (const slug of articleSlugs) {
+  if (!articlesSource.includes(`slug: "${slug}"`)) {
+    throw new Error(`Brak wymaganego sluga artykułu: ${slug}`);
   }
 }
 
@@ -221,7 +285,10 @@ if (experienceSource) {
   }
 }
 
-for (const [file, source] of sourceByFile) {
+const allSourceFiles = collectSourceFiles(join(root, "src"), "src");
+
+for (const file of allSourceFiles) {
+  const source = readFileSync(join(root, file), "utf8");
   if (/lorem ipsum|todo|placeholder/i.test(source)) {
     throw new Error(`W kodzie pozostała treść tymczasowa: ${file}`);
   }
