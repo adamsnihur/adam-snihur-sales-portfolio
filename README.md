@@ -2,7 +2,9 @@
 
 Jednostronicowe portfolio rekrutacyjne pod role przedstawiciela handlowego, account managera i sprzedaży B2B.
 
-Audyt produkcyjny Lighthouse: **100 Performance / 100 Accessibility / 100 Best Practices / 100 SEO**.
+Aktualny audyt dostępności Lighthouse (2026-06-19): **100/100** dla strony głównej, indeksu wiedzy i reprezentatywnego artykułu; zero failing weighted audits.
+
+Aktualny dowód QA: [`raporty/2026-06-19_qa_sales-portfolio-authority-upgrade.md`](raporty/2026-06-19_qa_sales-portfolio-authority-upgrade.md). Raport obejmuje routing, widoki 375/768/1440 px, klawiaturę, focus, skip link i `prefers-reduced-motion`. Raport z 2026-06-17 pozostaje wyłącznie zapisem historycznym i nie jest bieżącym dowodem dostępności.
 
 Strona: https://adamsnihur.github.io/adam-snihur-sales-portfolio/
 
