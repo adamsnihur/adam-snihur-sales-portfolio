@@ -49,7 +49,12 @@ function App() {
       const target = getFocusTarget(document, route, hash, isInitial);
       if (!target) return;
 
-      target.scrollTarget?.scrollIntoView();
+      if (target.scrollTarget) {
+        target.scrollTarget.scrollIntoView();
+      } else {
+        window.scrollTo(0, 0);
+      }
+
       if (!target.element.hasAttribute("tabindex")) {
         target.element.setAttribute("tabindex", "-1");
       }
