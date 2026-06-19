@@ -11,8 +11,8 @@ export function KnowledgeIndex() {
           <p className="eyebrow">Biblioteka sprzedaży B2B</p>
           <h1 tabIndex={-1}>Wiedza sprzedażowa</h1>
           <p>
-            Cztery materiały o diagnozie potrzeb, negocjacjach, pracy z pipeline’em
-            i odpowiedzialnym przekazaniu klienta do realizacji.
+            Kompendium wiedzy o diagnozie potrzeb, negocjacjach, pracy z pipeline-em,
+            zdobywaniu leadów oraz partnerskiej postawie w sprzedaży B2B.
           </p>
         </header>
         <div className="knowledge-list">

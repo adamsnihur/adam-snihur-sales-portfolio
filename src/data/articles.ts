@@ -345,4 +345,254 @@ export const articles: SalesArticle[] = [
       },
     ],
   },
+  {
+    slug: "mindset-selektywnosc-odrzucenie",
+    title: "Dyscyplina selektywności w sprzedaży B2B - dlaczego warto pokochać słowo „nie”",
+    description:
+      "Jak wczesna kwalifikacja i odrzucanie niedopasowanych szans chroni zasoby organizacji oraz buduje pozycję doradcy.",
+    readingTime: "4 min",
+    sections: [
+      {
+        heading: "Kwalifikacja to nie przesłuchanie, to świadoma selekcja",
+        paragraphs: [
+          "Wielu handlowców mierzy swój sukces liczbą odbytych spotkań i wysłanych ofert. W rzeczywistości jednak przepełniony pipeline, w którym większość szans nie rokuje na sukces, jest największym obciążeniem dla firmy. Czas poświęcony na próby przekonania nieklienta to czas zabrany tym, którzy rzeczywiście potrzebują naszej pomocy i są gotowi za nią zapłacić.",
+          "Dyscyplina selektywności polega na szybkim i rzetelnym oddzielaniu szans od iluzji. Sprzedawca premium nie szuka jakiegokolwiek kontraktu. Szuka dopasowania, w którym jego organizacja może wygenerować realną wartość, a klient posiada budżet, gotowość operacyjną oraz decyzyjną do przeprowadzenia wdrożenia. Taka selekcja chroni czas handlowca, inżynierów i zespołu realizacyjnego.",
+        ],
+      },
+      {
+        heading: "Mentalność partnera biznesowego zamiast petenta",
+        paragraphs: [
+          "Najczęstszym błędem w sprzedaży relacyjnej jest postawa petenta, który stara się zadowolić klienta za wszelką cenę. Taki handlowiec zgadza się na nierealne terminy, akceptuje brak transparentności w procesie decyzyjnym i bezdyskusyjnie obniża cenę. W ten sposób degraduje swoją pozycję z eksperta do dostawcy prostych usług.",
+          "Consultative selling opiera się na symetrii. Sprzedawca wnosi unikalną wiedzę o rynku, procesach i technologii, a klient wnosi budżet i chęć rozwiązania problemu. Gdy handlowiec ma odwagę zadawać trudne pytania i kwestionować założenia klienta, buduje autorytet. Pokazuje, że zależy mu na rezultacie biznesowym, a nie tylko na zamknięciu kwartału.",
+          "Właściwa postawa wymaga też jasnego określenia granic. Jeśli klient unika rozmowy o budżecie, odmawia kontaktu z decydentem lub nie chce zaangażować się w uzgodniony kolejny krok, handlowiec powinien nazwać to wprost. Uczciwe postawienie sprawy często przywraca właściwą dynamikę rozmów albo pozwala szybko zakończyć proces bez marnowania czasu.",
+        ],
+        bullets: [
+          "Zmieniaj perspektywę z „co mogę sprzedać” na „czy możemy sobie nawzajem pomóc”.",
+          "Zadawaj trudne pytania o budżet, decydentów i proces zakupu na wczesnym etapie.",
+          "Szanuj swój czas tak samo, jak szanujesz czas swojego klienta.",
+          "Komunikuj otwarcie ograniczenia i wyłączenia z oferty.",
+        ],
+      },
+      {
+        heading: "Dlaczego dyskwalifikacja leada to sukces handlowy",
+        paragraphs: [
+          "Szybka dyskwalifikacja leada (np. w ciągu pierwszych 15 minut discovery) powinna być traktowana jako sukces. Oznacza to, że handlowiec ochronił firmę przed kosztem przygotowania oferty, spotkań technicznych oraz potencjalnego wdrożenia, które skończyłoby się rezygnacją klienta (churnem).",
+          "Warto stworzyć jasną listę dyskwalifikatorów, czyli cech, które wykluczają współpracę. Może to być zbyt niski budżet reklamowy, brak zaangażowania lidera projektu po stronie klienta lub branża, w której nasza technologia nie przynosi efektów. Uczciwe powiedzenie klientowi „nie jesteśmy dla Państwa najlepszym wyborem” buduje wiarygodność na rynku i często owocuje poleceniem w przyszłości.",
+        ],
+        example: {
+          label: "Przykład hipotetyczny",
+          body: "Firma zgłasza się z prośbą o szybkie wdrożenie kampanii e-commerce na jutro. Handlowiec, zamiast ulegać presji, ustala, że klient nie ma przygotowanych kreacji ani skonfigurowanej analityki. Zamiast brać projekt skazany na porażkę, handlowiec odrzuca szansę, tłumacząc, że bez tych fundamentów kampania przyniosłaby stratę. Klient wraca po miesiącu, gdy uzupełnia braki.",
+        },
+      },
+      {
+        heading: "Zarządzanie odmową i energią w długim cyklu B2B",
+        paragraphs: [
+          "W sprzedaży B2B odrzucenie jest standardowym elementem pracy. Różnica między przeciętnym a wybitnym handlowcem leży w sposobie interpretacji odmowy. Przeciętny handlowiec traktuje „nie” osobiście, co obniża jego motywację i aktywność. Wybitny handlowiec traktuje to jako informację zwrotną o braku dopasowania i natychmiast przenosi uwagę na inne szanse.",
+          "Aby utrzymać wysoką efektywność, warto opierać swoje poczucie skuteczności na procesie, a nie tylko na wyniku finansowym. Wykonanie rzetelnej kwalifikacji, trzymanie się standardów discovery i terminowe zamykanie nieaktywnych wątków to elementy, na które handlowiec ma 100% wpływu. Wynik finansowy jest naturalną konsekwencją tej dyscypliny.",
+        ],
+      },
+      {
+        heading: "Checklista selektywnego handlowca",
+        paragraphs: [
+          "Ta krótka lista pomaga utrzymać higienę pipeline i chronić czas zespołu realizacyjnego przed wejściem w nieperspektywiczne tematy.",
+        ],
+        bullets: [
+          "Czy lead spełnia nasze minimalne kryteria ICP (skala, budżet, branża)?",
+          "Czy zdefiniowaliśmy realny problem biznesowy, który klient chce rozwiązać?",
+          "Czy klient otwarcie rozmawia o budżecie i sposobie finansowania projektu?",
+          "Czy mamy bezpośredni dostęp do osoby, która podpisuje umowę?",
+          "Czy potrafię wskazać przynajmniej dwa kluczowe ryzyka tego wdrożenia?",
+          "Czy klient angażuje się w ustalanie i realizację kolejnych kroków?",
+          "Czy mam odwagę powiedzieć „nie”, jeśli widzimy brak dopasowania?",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "outbound-precyzyjny-outreach",
+    title: "Precyzyjny outbound B2B - jak zdobywać wartościowe kontakty bez spamu",
+    description:
+      "Strategia budowania relacji i inicjowania rozmów handlowych przez wysoce spersonalizowany e-mail i LinkedIn.",
+    readingTime: "4 min",
+    sections: [
+      {
+        heading: "Koniec ery masowego spamu i automatycznych sekwencji",
+        paragraphs: [
+          "Wysyłanie setek identycznych wiadomości dziennie przy użyciu automatycznych narzędzi dawno przestało działać. Skrzynki decydentów są przepełnione generycznymi ofertami, które natychmiast trafiają do spamu. Współczesny outbound wymaga zmiany paradygmatu: od masowości do precyzji, od mówienia o sobie do mówienia o wyzwaniach klienta.",
+          "Precyzyjny outbound polega na docieraniu do wąskiej grupy starannie dobranych firm (np. 15-20 tygodniowo) z wiadomością, która od pierwszej linijki odnosi się do ich rzeczywistej sytuacji. Taki proces wymaga czasu na research, ale generuje wielokrotnie wyższą konwersję na spotkania i buduje reputację marki od pierwszego punktu styku.",
+        ],
+      },
+      {
+        heading: "Definiowanie ICP i sygnałów zakupowych na poziomie mikro",
+        paragraphs: [
+          "Skuteczny outbound zaczyna się od precyzyjnego profilu idealnego klienta (ICP). Zamiast szerokich kategorii typu „e-commerce w Polsce”, warto szukać firm o określonym modelu (np. e-commerce z własną marką kosmetyczną, przychodem 10-50M, sprzedających w modelu subskrypcyjnym). Im węższa specjalizacja, tym łatwiej dopasować argumentację.",
+          "Kolejnym krokiem jest wyszukiwanie mikro-sygnałów, które wskazują na potrzebę zmiany. Sygnałem może być rekrutacja na stanowisko e-commerce managera, spadek ruchu na stronie, brak optymalizacji mobilnej w koszyku czy uruchomienie nowych formatów reklamowych przez konkurencję. Te fakty dają handlowcowi naturalny powód do kontaktu.",
+        ],
+        bullets: [
+          "Określ 3-4 twarde kryteria ICP wykraczające poza samą branżę.",
+          "Wyszukuj sygnały zakupowe w mediach biznesowych i na profilach LinkedIn.",
+          "Mapuj strukturę decyzyjną: kto odpowiada za problem, a kto za budżet.",
+          "Twórz listy prospectów w małych, spójnych tematycznie kohortach.",
+        ],
+      },
+      {
+        heading: "Personalizacja 2.0 - odniesienie do kontekstu, nie tylko do imienia",
+        paragraphs: [
+          "Wstawienie imienia i nazwy firmy w szablonie maila to nie personalizacja. Odbiorcy natychmiast rozpoznają automatyczne tagi. Personalizacja 2.0 polega na pokazaniu, że handlowiec zadał sobie trud i przeanalizował obecne działania klienta. Może to być odwołanie do konkretnego elementu ich strony, reklamy lub wypowiedzi decydenta w podcaście.",
+          "Pierwsze zdanie wiadomości powinno dotyczyć klienta, nie nas. Zamiast pisać „Jesteśmy liderem performance marketingu”, lepiej zacząć od: „Zauważyłem, że Wasze ostatnie kreacje na TikToku skupiają się na formacie produktowym, ale brakuje w nich dynamicznego wezwania do działania”. Taki wstęp natychmiast buduje zaangażowanie i pozycję partnera merytorycznego.",
+        ],
+        example: {
+          label: "Przykład hipotetyczny",
+          body: "Handlowiec przygotowuje outreach do marki odzieżowej. Zamiast wysyłać ogólny PDF, nagrywa 90-sekundowe wideo (Loom), na którym pokazuje ich stronę mobilną i wskazuje dwa miejsca, w których klienci mogą porzucać koszyk z powodu braku płatności BLIK. Wiadomość z linkiem do wideo uzyskuje 60% odpowiedzi.",
+        },
+      },
+      {
+        heading: "Dostarczanie wartości na starcie przez micro-assets",
+        paragraphs: [
+          "Zimny kontakt rzadko kończy się zakupem podczas pierwszej rozmowy. Celem outboundu jest sprzedanie kolejnego kroku, czyli 15-minutowej rozmowy diagnostycznej. Aby obniżyć próg wejścia, warto zaoferować wartość już w pierwszej wiadomości. Służą do tego micro-assets: krótkie checklisty, branżowe benchmarki, szybkie audyty lub dedykowane wskazówki.",
+          "Wartość ta musi być konkretna, łatwa do przyswojenia i bezpośrednio powiązana z problemem, który rozwiązujemy. Jeśli oferujemy audyt, nie powinien to być 40-stronicowy automatyczny raport z programu partnerskiego. Lepszy będzie jednostronicowy dokument zawierający 3 ręcznie spisane obserwacje i konkretną rekomendację działania.",
+        ],
+      },
+      {
+        heading: "Checklista skutecznej kampanii outbound",
+        paragraphs: [
+          "Przed kliknięciem przycisku wysyłki upewnij się, że Twoja kampania spełnia standardy precyzyjnego i profesjonalnego kontaktu biznesowego.",
+        ],
+        bullets: [
+          "Czy każda firma na liście precyzyjnie pasuje do definicji ICP?",
+          "Czy pierwsza linijka wiadomości odnosi się do unikalnego kontekstu odbiorcy?",
+          "Czy usunąłeś z tekstu żargon, AI-sformułowania i autopromocję?",
+          "Czy cel wiadomości to zaproszenie do dyskusji, a nie bezpośrednia sprzedaż?",
+          "Czy dołączyłeś prosty, spersonalizowany micro-asset niosący wartość?",
+          "Czy sekwencja follow-up jest zaplanowana i uwzględnia różne kanały?",
+          "Czy proces pozwala na bieżąco analizować powody braku odpowiedzi?",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "handlowiec-straznik-retencji",
+    title: "Handlowiec jako strażnik marży i retencji - odpowiedzialność za sukces po podpisaniu umowy",
+    description:
+      "Świadomość kosztów wdrożenia i realizacji w sprzedaży success-based oraz premium - jak handlowiec buduje rentowność firmy.",
+    readingTime: "5 min",
+    sections: [
+      {
+        heading: "Sprzedaż nie kończy się na podpisaniu kontraktu i prowizji",
+        paragraphs: [
+          "W wielu organizacjach handlowiec jest rozliczany wyłącznie z wartości podpisanych umów. Taki model motywacyjny tworzy niebezpieczną lukę: sprzedawca dąży do zamknięcia transakcji za wszelką cenę, nawet jeśli klient ma nierealistyczne oczekiwania, a projekt jest na granicy rentowności. Prawdziwe koszty tego podejścia wychodzą na jaw dopiero podczas wdrożenia.",
+          "Handlowiec w sprzedaży premium i success-based odpowiada za marżę oraz retencję. Jeśli sprzedamy projekt klientowi, który odejdzie po dwóch miesiącach z poczuciem zawodu, firma poniesie stratę. Koszt pozyskania klienta (CAC) oraz czas zaangażowania zespołu wdrożeniowego nie zostaną zamortyzowane. Sukces handlowy mierzy się rentownością kontraktu w czasie (LTV).",
+        ],
+      },
+      {
+        heading: "Zależność między CAC a LTV z perspektywy handlowca",
+        paragraphs: [
+          "Handlowiec powinien rozumieć podstawowe wskaźniki finansowe swojej firmy. CAC (Customer Acquisition Cost) to nie tylko budżet marketingowy, ale także czas handlowca, inżynierów wsparcia i zasobów zużytych na proces sprzedaży. LTV (Lifetime Value) to całkowity przychód, jaki klient wygeneruje w trakcie współpracy. Zdrowy biznes wymaga, aby LTV było przynajmniej trzykrotnie wyższe niż CAC.",
+          "Każde ustępstwo cenowe, darmowy okres próbny czy niestandardowe prace programistyczne wdrożone na etapie sprzedaży podnoszą CAC i wydłużają czas zwrotu z inwestycji (Payback Period). Zadaniem handlowca jest obrona marży poprzez pokazywanie wartości rozwiązania, a nie uleganie presji negocjacyjnej przy pierwszej obiekcji.",
+        ],
+        bullets: [
+          "Broń marży wartością, nie rabatem.",
+          "Szacuj czas i koszty pracy zespołu technicznego przed złożeniem obietnicy.",
+          "Monitoruj rentowność wdrożonych przez siebie projektów.",
+          "Dbaj o to, by oczekiwania klienta były zbieżne z rzeczywistymi możliwościami dostarczania.",
+        ],
+      },
+      {
+        heading: "Success-based pricing i ryzyko niedopasowania",
+        paragraphs: [
+          "Model rozliczeń oparty na wynikach (success fee) brzmi atrakcyjnie dla obu stron. Klient czuje się bezpiecznie, a agencja deklaruje pewność swoich działań. Jednak ten model działa tylko wtedy, gdy handlowiec przeprowadzi rygorystyczne discovery dotyczące czynników, na które nasza firma nie ma bezpośredniego wpływu.",
+          "Jeśli w performance marketingu agencja odpowiada za ROAS, ale klient ma powolną stronę, słabą obsługę klienta lub wadliwy produkt, nawet najlepsze reklamy nie przyniosą konwersji. Handlowiec musi zidentyfikować te wąskie gardła przed podpisaniem umowy. Jeśli ryzyko jest zbyt duże, a klient nie chce poprawić swoich procesów, sprzedaż success-based staje się dla agencji stratą finansową.",
+        ],
+        example: {
+          label: "Przykład hipotetyczny",
+          body: "Agencja podpisuje umowę success-based z e-commerce. Handlowiec nie zweryfikował, że właściciel ma problemy z łańcuchem dostaw i często brakuje mu towaru na magazynie. Mimo świetnych wyników kampanii, reklamy musiały być wyłączane z powodu braku asortymentu. Koszty pracy zespołu przewyższyły prowizję od zrealizowanej sprzedaży.",
+        },
+      },
+      {
+        heading: "Kiedy handlowo opłaca się powiedzieć „nie”",
+        paragraphs: [
+          "Odmowa wejścia we współpracę z trudnym lub niedopasowanym klientem wymaga dojrzałości biznesowej. Taki krok bywa trudny, szczególnie gdy handlowiec goni cele kwartalne. W perspektywie całej organizacji jest to jednak decyzja ratująca rentowność. Klienci, którzy kupują wyłącznie pod wpływem drastycznych obniżek cen, generują najwięcej zgłoszeń serwisowych, blokują zasoby i odchodzą najszybciej.",
+          "Handlowiec powinien być pierwszym filtrem bezpieczeństwa firmy. Uczciwa ocena rentowności pozwala skupić zasoby operacyjne na obsłudze klientów premium, którzy rosną razem z nami, generują stabilną marżę i chętnie dokupują kolejne usługi (cross-sell/upsell).",
+        ],
+      },
+      {
+        heading: "Checklista rentownej sprzedaży",
+        paragraphs: [
+          "Stosuj tę checklistę przed ostatecznym zatwierdzeniem warunków finansowych kontraktu, aby upewnić się, że sprzedaż buduje wartość firmy.",
+        ],
+        bullets: [
+          "Czy wynegocjowana marża pokrywa realne koszty obsługi i wdrożenia?",
+          "Czy budżet i oczekiwania klienta dają szansę na zwrot z inwestycji (ROI)?",
+          "Czy w przypadku success fee zweryfikowaliśmy czynniki zależne od klienta?",
+          "Czy klient akceptuje nasze standardowe warunki płatności i terminy?",
+          "Czy zakres prac nie zawiera ukrytych, bezpłatnych modyfikacji?",
+          "Czy wdrożenie nie zablokuje kluczowych zasobów firmy kosztem innych projektów?",
+          "Czy na bazie discovery oceniam ryzyko odejścia klienta w ciągu 6 miesięcy jako niskie?",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "zamykanie-sprzedazy-bez-presji",
+    title: "Zamykanie sprzedaży bez presji - budowanie naturalnej ścieżki decyzyjnej",
+    description:
+      "Dlaczego agresywne techniki zamykania niszczą relacje B2B i jak zastąpić je partnerskim, przewidywalnym procesem.",
+    readingTime: "4 min",
+    sections: [
+      {
+        heading: "Mit agresywnego zamykania transakcji w B2B",
+        paragraphs: [
+          "Tradycyjna szkoła sprzedaży uczy technik typu „alternatywa wyboru” czy „sztuczna pilność”. W relacjach biznesowych o wysokiej wartości te metody działają na szkodę handlowca. Doświadczeni decydenci natychmiast wyczuwają manipulację i presję. Nawet jeśli ulegną i podpiszą umowę pod wpływem emocji, szybko pojawia się u nich żal kupującego, co prowadzi do trudnej współpracy lub zerwania kontraktu.",
+          "Zamykanie sprzedaży to nie pojedyncze zdarzenie na końcu procesu ani sztuczka słowna. To naturalna konsekwencja dobrze przeprowadzonego discovery, precyzyjnego dopasowania rozwiązania i partnerskich ustaleń. Jeśli proces był prowadzony prawidłowo, podpisanie umowy jest jedynie formalnym potwierdzeniem wcześniejszych kroków.",
+        ],
+      },
+      {
+        heading: "Mutual Action Plan (MAP) jako drogowskaz procesu",
+        paragraphs: [
+          "Mutual Action Plan (Wspólny Plan Działań) to dokument tworzony wspólnie z klientem podczas pierwszych rozmów. Pokazuje całą ścieżkę od discovery, przez analizy techniczne, akceptacje prawne, aż do startu wdrożenia. MAP zmienia dynamikę relacji: handlowiec i klient nie stoją naprzeciwko siebie w negocjacjach, lecz razem realizują projekt wdrożeniowy.",
+          "Wspólny plan określa zadania, właścicieli i terminy po obu stronach. Dzięki temu klient widzi, że handlowiec kontroluje proces i dba o ich bezpieczeństwo operacyjne. MAP pozwala też naturalnie monitorować postęp i bez presji przypominać o terminach: „Zgodnie z naszym planem, aby wystartować wdrożenie w lipcu, w tym tygodniu potrzebujemy akceptacji działu prawnego”.",
+        ],
+        bullets: [
+          "Twórz MAP wspólnie z klientem już po udanym discovery.",
+          "Wskazuj konkretnych właścicieli zadań po obu stronach.",
+          "Opieraj terminy na docelowej dacie uruchomienia ważnej dla klienta.",
+          "Używaj planu jako wspólnego narzędzia do usuwania blokad.",
+        ],
+      },
+      {
+        heading: "Neutralizowanie obiekcji w trakcie procesu, a nie na końcu",
+        paragraphs: [
+          "Przeciętny handlowiec unika tematów trudnych (takich jak cena, bezpieczeństwo danych czy zaangażowanie zespołu klienta) z obawy przed zepsuciem atmosfery. Liczy na to, że jakoś to będzie. W efekcie te obiekcje wracają ze zdwojoną siłą na samym końcu, blokując podpisanie umowy.",
+          "Profesjonalny sprzedawca aktywnie wyszukuje obiekcje i adresuje je w momencie, gdy się pojawiają. Pyta otwarcie: „Co mogłoby zatrzymać ten projekt?”, „Jakie obawy ma Wasz zespół IT w stosunku do takich integracji?”. Rozbrojenie obiekcji na wczesnym etapie pozwala dostosować ofertę i eliminuje niespodzianki w fazie zamykania.",
+        ],
+        example: {
+          label: "Przykład hipotetyczny",
+          body: "Podczas prezentacji oferty handlowiec zauważa, że dyrektor finansowy milczy. Zamiast kończyć spotkanie, handlowiec pyta: „Widzę, że analizuje Pan sekcję budżetową. Jak te widełki wpisują się w Wasze obecne plany finansowe na ten kwartał?”. CFO zgłasza obiekcję dotyczącą płatności jednorazowej, co pozwala handlowcowi na miejscu zaproponować podział na raty.",
+        },
+      },
+      {
+        heading: "Naturalny moment decyzji i zamykanie pętli",
+        paragraphs: [
+          "Gdy wszystkie punkty z Mutual Action Plan zostaną zrealizowane, a obiekcje wyjaśnione, przejście do decyzji jest formalnością. Handlowiec nie musi stosować presji. Wystarczy podsumować ustalenia i zapytać o gotowość: „Zrealizowaliśmy wszystkie punkty z naszego planu, zespół techniczny potwierdził integrację. Czy z Państwa perspektywy możemy przejść do podpisania dokumentów?”.",
+          "Jeśli klient zaczyna unikać kontaktu, handlowiec ma prawo zamknąć pętlę w sposób partnerski. Zamiast wysyłać maile z zapytaniem „czy coś się zmieniło”, lepiej napisać: „Widzę, że priorytety w Waszym zespole mogły ulec zmianie i ten projekt nie jest teraz kluczowy. Zamykam ten wątek po naszej stronie, aby nie zajmować Państwa czasu. Wrócimy do tematu, gdy przestrzeń operacyjna będzie większa”. Taka wiadomość często przywraca kontakt albo pozwala zachować czysty pipeline.",
+        ],
+      },
+      {
+        heading: "Checklista partnerskiego zamykania",
+        paragraphs: [
+          "Użyj tej listy przed końcową rozmową o podpisaniu umowy, aby upewnić się, że decyzja klienta będzie trwała i bezpieczna dla obu stron.",
+        ],
+        bullets: [
+          "Czy wspólnie z klientem zrealizowaliśmy wszystkie kroki z Mutual Action Plan?",
+          "Czy wszystkie obiekcje dotyczące ceny, technologii i wdrożenia zostały zaadresowane?",
+          "Czy w rozmowach uczestniczyły wszystkie osoby mające wpływ na decyzję?",
+          "Czy klient jasno potwierdził, że proponowane rozwiązanie rozwiązuje jego problem?",
+          "Czy termin startu wdrożenia jest uzgodniony i realny dla obu zespołów?",
+          "Czy w przypadku braku kontaktu daliśmy sobie prawo do partnerskiego zamknięcia wątku?",
+          "Czy proces decyzyjny przebiegał bez sztucznej presji czasowej i manipulacji?",
+        ],
+      },
+    ],
+  },
 ];
+
