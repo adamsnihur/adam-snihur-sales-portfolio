@@ -20,10 +20,10 @@ export function HomePage() {
       <main id="main">
         <section className="hero" id="top">
           <div className="hero-copy" data-reveal>
-            <p className="availability"><span /> Otwarty na role sprzedażowe B2B</p>
+            <p className="availability"><span /> Ponad 6 lat w sprzedaży • Otwarty na role B2B</p>
             <h1 tabIndex={-1}>Relacja otwiera drzwi.<br /><em>Analiza domyka sprzedaż.</em></h1>
             <p className="hero-lead">
-              Łączę doświadczenie w pozyskiwaniu klientów i negocjacjach z analitycznym sposobem myślenia. Rozumiem zarówno rozmowę handlową, jak i procesy stojące za dobrą obsługą klienta.
+              Łączę ponad 6 lat doświadczenia w pozyskiwaniu klientów i negocjacjach z analitycznym sposobem myślenia. Rozumiem zarówno rozmowę handlową, jak i procesy stojące za dobrą obsługą klienta.
             </p>
             <div className="hero-actions">
               <a className="button button-accent" href="mailto:adam.snihur@gmail.com?subject=Rozmowa%20o%20roli%20sprzedażowej">
