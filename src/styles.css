@@ -540,3 +540,124 @@ footer { display: flex; justify-content: space-between; padding: 2rem 0 3rem; co
     transition: none !important;
   }
 }
+
+/* ==========================================================================
+   Google Certification Callout Badges & Banners
+   ========================================================================== */
+
+.proof-cert-card {
+  position: relative;
+  z-index: 2;
+  width: calc(100% - 2rem);
+  margin: 1.25rem 0 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--accent);
+  border-radius: 1.25rem;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 18px 45px -24px rgba(194, 65, 12, 0.45);
+}
+
+.cert-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.cert-badge-tag {
+  font-family: "Outfit", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.cert-card-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+}
+
+.cert-link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  padding: 0.55rem 0.85rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+  transition: all 200ms ease;
+}
+
+.cert-link-btn:hover {
+  border-color: var(--accent);
+  background: var(--surface);
+  transform: translateY(-1.5px);
+  color: var(--accent);
+}
+
+.cert-lang {
+  display: inline-block;
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.35rem;
+  background: color-mix(in srgb, var(--accent), transparent 85%);
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.capability-cert-banner {
+  margin-top: 3rem;
+  padding: 2rem 2.5rem;
+  border: 1px solid var(--accent);
+  border-radius: 1.5rem;
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  box-shadow: 0 20px 50px -30px rgba(194, 65, 12, 0.4);
+}
+
+.cert-banner-info {
+  max-width: 600px;
+}
+
+.cert-banner-info h3 {
+  font-size: 1.35rem;
+  margin: 0.35rem 0 0.5rem;
+}
+
+.cert-banner-info p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.cert-banner-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 220px;
+}
+
+@media (max-width: 768px) {
+  .cert-card-links {
+    grid-template-columns: 1fr;
+  }
+  .capability-cert-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+  }
+  .cert-banner-actions {
+    width: 100%;
+  }
+}
+

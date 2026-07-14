@@ -46,6 +46,20 @@ export function HomePage() {
               <div><strong>S’ouvre</strong><span>sprzedaż bezpośrednia i zespół</span></div>
               <div><strong>E-commerce</strong><span>oferta, dostawcy i rentowność</span></div>
             </div>
+
+            <div className="proof-cert-card" data-reveal>
+              <div className="cert-card-header">
+                <span className="cert-badge-tag">Certyfikat Google AI / Google Credential</span>
+              </div>
+              <div className="cert-card-links">
+                <a href="./assets/CertyfikatUmiejetnosciJutra_PL.pdf" target="_blank" rel="noopener noreferrer" className="cert-link-btn" title="Otwórz oficjalny certyfikat po polsku">
+                  <span className="cert-lang">PL</span> Umiejętności Jutra AI ↗
+                </a>
+                <a href="./assets/CertyfikatUmiejetnosciJutra_EN.pdf" target="_blank" rel="noopener noreferrer" className="cert-link-btn" title="View official certificate in English">
+                  <span className="cert-lang">EN</span> Skills of Tomorrow AI ↗
+                </a>
+              </div>
+            </div>
           </aside>
         </section>
 

@@ -19,6 +19,22 @@ export function CapabilityGroups() {
           </div>
         ))}
       </div>
+
+      <div className="capability-cert-banner" data-reveal>
+        <div className="cert-banner-info">
+          <span className="cert-badge-tag">Certyfikowana Wiedza / Certified Expertise</span>
+          <h3>Certyfikat Umiejętności Jutra AI (Google) / Google AI Skills of Tomorrow</h3>
+          <p>Oficjalne potwierdzenie wiedzy i praktycznych umiejętności z zakresu sztucznej inteligencji, automatyzacji i agentowych systemów AI wydane przez Google.</p>
+        </div>
+        <div className="cert-banner-actions">
+          <a className="button button-small button-dark" href="./assets/CertyfikatUmiejetnosciJutra_PL.pdf" target="_blank" rel="noopener noreferrer">
+            Certyfikat (PL) ↗
+          </a>
+          <a className="button button-small button-dark" href="./assets/CertyfikatUmiejetnosciJutra_EN.pdf" target="_blank" rel="noopener noreferrer">
+            Certificate (EN) ↗
+          </a>
+        </div>
+      </div>
     </section>
   );
 }
